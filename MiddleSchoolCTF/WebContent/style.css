@@ -1,0 +1,20 @@
+body {
+	background-color: black;
+	color: white;
+}
+
+div#header {
+	display: block;
+	margin: auto;
+	text-align: center;
+	
+}
+
+div#nav {
+
+}
+
+div#nav ul {
+	list-style: none;
+	overflow: auto;
+}
