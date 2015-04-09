@@ -1,6 +1,5 @@
 body {
-	background-color: black;
-	color: white;
+	background-image: url("images/background.jpg");
 }
 
 div#wrapper {
@@ -10,12 +9,14 @@ div#wrapper {
 
 div#header {
 	display: block;
+	text-align: center;
 }
 
 div#nav {
 	margin: auto;
 	display: inline;
 	text-align: center;
+	color: white;
 }
 
 div#nav ul {
@@ -29,6 +30,10 @@ div#nav li {
 	display: inline;
 }
 
+div#nav li.current a{
+	background-color: black;
+}
+
 div#nav li a {
 	display: inline-block;
 	padding: 7px 10px 7px 5px;
@@ -37,11 +42,21 @@ div#nav li a {
 	border-right: 2px solid #AAAAAA;
 }
 
-div#nav li.scoreBoard {
+div#nav li.scoreBoard a{
 	background-color: #0050AB;
 	border: none;
 }
 
 div#nav li a:hover {
 	background-image: url("images/1E8C2D_75.png");
+}
+
+div#body{
+	border: 2px solid white;
+	background-color: gray;
+}
+div#body h1{
+	text-align:center;
+	text-decoration:underline;
+	color: black;
 }
