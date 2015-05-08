@@ -12,8 +12,9 @@ div#wrapper {
 div#header {
 	display: block;
 	color: #009C3E;
-	font-size: 15px;
+	font-size: 18px;
 	font-family: Oswald;
+	font-style:  italic;
 }
 
 div#nav {
