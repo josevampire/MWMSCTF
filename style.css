@@ -17,45 +17,6 @@ div#header {
 	font-style:  italic;
 }
 
-div#nav {
-	margin: auto;
-	display: inline;
-	text-align: center;
-	color: white;
-}
-
-div#nav ul {
-	list-style: none;
-	display: block;
-	margin: 0px auto 0px auto;
-	background-color: #5F5F5F;
-}
-
-div#nav li {
-	display: inline;
-}
-
-div#nav li.current a{
-	background-color: black;
-}
-
-div#nav li a {
-	display: inline-block;
-	padding: 7px 10px 7px 5px;
-	text-decoration: none;
-	color: white;
-	border-right: 2px solid #AAAAAA;
-}
-
-div#nav li.scoreBoard a{
-	background-color: #0050AB;
-	border: none;
-}
-
-div#nav li a:hover {
-	background-image: url("images/1E8C2D_75.png");
-}
-
 div#body{
 	border: 2px solid white;
 	background-color: gray;
