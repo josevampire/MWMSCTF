@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Oswald:300);
 
 body {
-	background-image: url("images/background.jpg");
+	background-image: url("images/crossword.png");
 }
 
 div#wrapper {
@@ -18,8 +18,7 @@ div#header {
 }
 
 div#body{
-	border: 2px solid white;
-	background-color: gray;
+	border: 2px solid grey;
 }
 div#body h1{
 	text-align:center;
