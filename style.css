@@ -24,3 +24,25 @@ a.navbar-brand {
 button.thumbnail {
     outline: none;
 }
+
+div#footer {
+	width: 900px;
+	margin: auto;
+	padding: 10px;
+	border-top: 1px solid gray;
+	position: fixed;
+	bottom: 20px;
+	color: white;
+	
+
+}
+div#footer a{
+	color: #B0B0B0;
+}
+div#footer p{
+	display: inline;
+	margin: auto;
+}
+div#footer img.image{
+	float: right;
+}
