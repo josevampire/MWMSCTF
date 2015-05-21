@@ -17,11 +17,6 @@ div#header {
 	font-style:  italic;
 }
 
-div#body{
-	border: 2px solid grey;
-}
-div#body h1{
-	text-align:center;
-	text-decoration:underline;
-	color: black;
+a.navbar-brand {
+	padding-top: 0px;
 }
