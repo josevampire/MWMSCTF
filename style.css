@@ -10,7 +10,7 @@ div#wrapper {
 }
 
 div#header {
-	display: block;
+	display: inline;
 	color: #009C3E;
 	font-size: 18px;
 	font-family: Oswald;
@@ -24,14 +24,14 @@ a.navbar-brand {
 button.thumbnail {
     outline: none;
 }
-
+div#body{
+	overflow:auto;
+}
 div#footer {
 	width: 900px;
 	margin: auto;
 	padding: 10px;
 	border-top: 1px solid gray;
-	position: fixed;
-	bottom: 20px;
 	color: white;
 	
 
@@ -40,7 +40,6 @@ div#footer a{
 	color: #B0B0B0;
 }
 div#footer p{
-	display: inline;
 	margin: auto;
 }
 div#footer img.image{
