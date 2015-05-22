@@ -4,7 +4,7 @@
 		<meta charset="ISO-8859-1">
 		<link rel="stylesheet" type="text/css" href="../style.css">
 		<link href="../bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
-		<title>Trivia</title>
+		<title>Web</title>
 	</head>
 	<body>
 
@@ -34,10 +34,10 @@
 				      <ul class="nav navbar-nav">
 				        <li><a href="../index.html">Home</a></li>
 				        <li><a href="crypto.html">Crypto</a></li>
-				        <li class="active"><a href="#">Trivia<span class="sr-only">(current)</span></a></li>
+				        <li><a href="trivia.html">Trivia</a></li>
 				        <li><a href="web.html">Web</a></li>
 				        <li><a href="recon.html">Recon</a></li>
-				        <li><a href="grabBag.html">Grab Bag</a></li>
+				        <li class="active"><a href="#">Grab Bag<span class="sr-only">(current)</span></a></li>
 				        <li><a href="flash.html">Flash</a></li>
 				      </ul>
 				      <ul class="nav navbar-nav navbar-right">
@@ -50,29 +50,30 @@
 			<div id="body">
 				<div class="row-fluid">
 					<div class="col-xs-6 col-md-6">
-					    <button type="button" class="thumbnail">
-					    <img src="../images/thumbnails/trivia/100.png" alt="Crypto for 100">
+					    <button type="button" class="thumbnail" data-toggle="modal" data-target="#modal2">
+					    <img src="../images/thumbnails/grabBag/500.png" alt="Crypto for 100">
 					    </button>
-					</div>
-					<div class="col-xs-6 col-md-6">
-					    <button type="button" class="thumbnail">
-					    <img src="../images/thumbnails/trivia/200.png" alt="Crypto for 100">
-					    </button>
-					</div>
-					<div class="col-xs-6 col-md-6">
-					    <button type="button" class="thumbnail">
-					    <img src="../images/thumbnails/trivia/300.png" alt="Crypto for 100">
-					    </button>
-					</div>
-					<div class="col-xs-6 col-md-6">
-					    <button type="button" class="thumbnail">
-					    <img src="../images/thumbnails/trivia/400.png" alt="Crypto for 100">
-					    </button>
-					</div>
-					<div class="col-xs-6 col-md-6">
-					    <button type="button" class="thumbnail">
-					    <img src="../images/thumbnails/trivia/500.png" alt="Crypto for 100">
-					    </button>
+					    <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        <h4 class="modal-title" id="myModalLabel">Cryptography: 200 </h4>
+						      </div>
+						      <div class="modal-body">
+						        <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+						        <div class="input-group">
+								  <span class="input-group-addon" id="basic-addon1">Answer</span>
+								  <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
+								</div>
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						        <button type="button" class="btn btn-primary">Submit</button>
+						      </div>
+						    </div>
+						  </div>
+						</div>
 					</div>
 				</div>
 			</div>
