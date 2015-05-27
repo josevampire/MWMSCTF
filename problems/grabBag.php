@@ -10,42 +10,18 @@
 
 		<script src="../bootstrap-3.3.4-dist/jquery-1.11.3.min.js"></script>
 		<script src="../bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
-
+		<?php 
+			define('pageName', 'grabBag');
+		?>
 		<div id="wrapper">
 			<div id="header">
 				<h1>Millard West MSCTF 2015</h1>
 			</div>
 			<div id="nav">
-				<nav class="navbar navbar-default">
-				  <div class="container-fluid">
-				    <!-- Brand and toggle get grouped for better mobile display -->
-				    <div class="navbar-header">
-				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				        <span class="sr-only">Toggle navigation</span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				      </button>
-				      <a class="navbar-brand" href="#"><img src="../images/logo.png"></a>
-				    </div>
-
-				    <!-- Collect the nav links, forms, and other content for toggling -->
-				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				      <ul class="nav navbar-nav">
-				        <li><a href="../index.html">Home</a></li>
-				        <li><a href="crypto.html">Crypto</a></li>
-				        <li><a href="trivia.html">Trivia</a></li>
-				        <li><a href="web.html">Web</a></li>
-				        <li><a href="recon.html">Recon</a></li>
-				        <li class="active"><a href="#">Grab Bag<span class="sr-only">(current)</span></a></li>
-				        <li><a href="flash.html">Flash</a></li>
-				      </ul>
-				      <ul class="nav navbar-nav navbar-right">
-				        <li><a href="../scoreboard.html">Score Board</a></li>
-      				</ul>
-				    </div><!-- /.navbar-collapse -->
-				  </div><!-- /.container-fluid -->
-				</nav>
+				<?php
+					include '../helpers/nav.php';
+					nav(pageName);
+				?>
 			</div>
 			<div id="body">
 				<div class="row-fluid">

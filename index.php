@@ -8,43 +8,20 @@
 		<title>CTF Home Page</title>
 	</head>
 	<body>
-
 		<script src="bootstrap-3.3.4-dist/jquery-1.11.3.min.js"></script>
 		<script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
-
+		<?php 
+			define('pageName', 'index');
+		?>
 		<div id="wrapper">
 			<div id="header">
 				<h1>Millard West MSCTF 2015</h1>
 			</div>
 			<div id="nav">
-				  <nav class="navbar navbar-default">
-				  <div class="container-fluid">
-				    <div class="navbar-header">
-				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				        <span class="sr-only">Toggle navigation</span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				      </button>
-				      <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
-				    </div>
-
-				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				      <ul class="nav navbar-nav">
-				        <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-				        <li><a href="problems/crypto.html">Crypto</a></li>
-				        <li><a href="problems/trivia.html">Trivia</a></li>
-				        <li><a href="problems/web.html">Web</a></li>
-				        <li><a href="problems/recon.html">Recon</a></li>
-				        <li><a href="problems/grabBag.html">Grab Bag</a></li>
-				        <li><a href="problems/flash.html">Flash</a></li>
-				      </ul>
-				      <ul class="nav navbar-nav navbar-right">
-				        <li><a href="scoreboard.html">Score Board</a></li>
-      				</ul>
-				    </div>
-				  </div>
-				</nav>
+				<?php
+					include 'helpers/nav.php';
+					nav(pageName);
+				?>
 			</div>
 				<div class="panel panel-body" id = "body">
 					<div class="panel-body">
