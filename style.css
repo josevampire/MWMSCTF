@@ -44,3 +44,7 @@ div#footer p{
 div#footer img.image{
 	float: right;
 }
+img#triv100{
+	display: block;
+	margin: 20px auto;
+}
