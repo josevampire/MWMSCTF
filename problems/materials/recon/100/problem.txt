@@ -1,0 +1,4 @@
+**<QUESTION>**
+Nico plays a high school sport at the varsity level. What is his current jersey number for that sport?
+**<FLAG>**
+2

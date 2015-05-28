@@ -1,0 +1,4 @@
+**<QUESTION>**
+Huh, cool picture. I wonder what city it was taken in. The source img can be found at:<br>/problems/materials/grabBag/200/img.jpg
+**<FLAG>**
+Naples
