@@ -12,6 +12,8 @@
 		<script src="../bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 		<?php 
 			define('pageName', 'flash');
+			include '../helpers/nav.php';
+			include '../helpers/footer.php';
 		?>
 		<div id="wrapper">
 			<div id="header">
@@ -19,7 +21,6 @@
 			</div>
 			<div id="nav">
 				<?php
-					include '../helpers/nav.php';
 					nav(pageName);
 				?>
 			</div>
@@ -28,7 +29,6 @@
 			</div>
 			<div id = "footer">
 				<?php
-					include '../helpers/footer.php';
 					footer(pageName);
 				?>
 			</div>
