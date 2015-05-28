@@ -10,11 +10,21 @@ div#wrapper {
 }
 
 div#header {
+	padding: 15px;
+	
+}
+.btn {
+	background-color: #009C3E;
+}
+div#header h1{
 	display: inline;
 	color: #009C3E;
-	font-size: 18px;
 	font-family: Oswald;
 	font-style:  italic;
+}
+div#header button{
+	float: right;
+	padding-top: 5px;
 }
 
 a.navbar-brand {
