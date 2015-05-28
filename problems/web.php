@@ -53,24 +53,10 @@
 				</div>
 			</div>
 			<div id = "footer">
-					<p>&copy; 2015 Nicko, Inc. 
-					&nbsp;&nbsp;&nbsp;
-					<a href = "../index.html">Home</a>
-					&nbsp;&nbsp;&nbsp;
-					<a href = "crypto.html">Crypto</a>
-					&nbsp;&nbsp;&nbsp;
-					<a href = "trivia.html">Trivia</a>
-					&nbsp;&nbsp;&nbsp;
-					<a href = "web.html">Web</a>
-					&nbsp;&nbsp;&nbsp;
-					<a href = "recon.html">Recon</a>
-					&nbsp;&nbsp;&nbsp;
-					<a href = "grabBag.html">Grab Bag</a>
-					&nbsp;&nbsp;&nbsp;
-					<a href = "flash.html">Flash</a>
-					&nbsp;&nbsp;&nbsp;
-					<a href = "../scoreboard.html">Score Board</a></p>
-				<img src = "images/logo.png" alt = "logo" class = "image">
+				<?php
+					include '../helpers/footer.php';
+					footer(pageName);
+				?>
 			</div>
 		</div>
 	</body>

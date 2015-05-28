@@ -38,7 +38,7 @@
 						      </div>
 						      <div class="modal-body">
 						        <p> Huh, cool picture. I wonder what city it was taken in. The souce img can be found at:
-						        	/problems/questions/grabBag/200/img.jpg</p>
+						        	/problems/materials/grabBag/200/img.jpg</p>
 						        <div class="input-group">
 								  <span class="input-group-addon" id="basic-addon1">Answer</span>
 								  <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1">
@@ -81,24 +81,10 @@
 				</div>
 			</div>
 			<div id = "footer">
-					<p>&copy; 2015 Nicko, Inc. 
-					&nbsp;&nbsp;&nbsp;
-					<a href = "../index.html">Home</a>
-					&nbsp;&nbsp;&nbsp;
-					<a href = "crypto.html">Crypto</a>
-					&nbsp;&nbsp;&nbsp;
-					<a href = "trivia.html">Trivia</a>
-					&nbsp;&nbsp;&nbsp;
-					<a href = "web.html">Web</a>
-					&nbsp;&nbsp;&nbsp;
-					<a href = "recon.html">Recon</a>
-					&nbsp;&nbsp;&nbsp;
-					<a href = "grabBag.html">Grab Bag</a>
-					&nbsp;&nbsp;&nbsp;
-					<a href = "flash.html">Flash</a>
-					&nbsp;&nbsp;&nbsp;
-					<a href = "../scoreboard.html">Score Board</a></p>
-				<img src = "../images/logo.png" alt = "logo" class = "image">
+				<?php
+					include '../helpers/footer.php';
+					footer(pageName);
+				?>
 			</div>
 		</div>
 	</body>
