@@ -12,6 +12,9 @@
 		<script src="../bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 		<?php 
 			define('pageName', 'web');
+			include '../helpers/problemModal.php';
+			include '../helpers/nav.php';
+			include '../helpers/footer.php';
 		?>
 		<div id="wrapper">
 			<div id="header">
@@ -19,42 +22,40 @@
 			</div>
 			<div id="nav">
 				<?php
-					include '../helpers/nav.php';
 					nav(pageName);
 				?>
 			</div>
 			<div id="body">
 				<div class="row-fluid">
 					<div class="col-xs-6 col-md-6">
-					    <button type="button" class="thumbnail">
-					    <img src="../images/thumbnails/web/100.png" alt="Crypto for 100">
-					    </button>
+					    <?php
+					    	problemModal(pageName, 1, 100);
+					    ?>
 					</div>
 					<div class="col-xs-6 col-md-6">
-					    <button type="button" class="thumbnail">
-					    <img src="../images/thumbnails/web/200.png" alt="Crypto for 100">
-					    </button>
+					    <?php
+					    	problemModal(pageName, 2, 200);
+					    ?>
 					</div>
 					<div class="col-xs-6 col-md-6">
-					    <button type="button" class="thumbnail">
-					    <img src="../images/thumbnails/web/300.png" alt="Crypto for 100">
-					    </button>
+					    <?php
+					    	problemModal(pageName, 3, 300);
+					    ?>
 					</div>
 					<div class="col-xs-6 col-md-6">
-					    <button type="button" class="thumbnail">
-					    <img src="../images/thumbnails/web/400.png" alt="Crypto for 100">
-					    </button>
+					    <?php
+					    	problemModal(pageName, 4, 400);
+					    ?>
 					</div>
 					<div class="col-xs-6 col-md-6">
-					    <button type="button" class="thumbnail">
-					    <img src="../images/thumbnails/web/500.png" alt="Crypto for 100">
-					    </button>
+					    <?php
+					    	problemModal(pageName, 5, 500);
+					    ?>
 					</div>
 				</div>
 			</div>
 			<div id = "footer">
 				<?php
-					include '../helpers/footer.php';
 					footer(pageName);
 				?>
 			</div>
