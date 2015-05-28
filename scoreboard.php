@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="ISO-8859-1">
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link href="bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
+		<?php 
+			define('pageName', 'scoreboard');
+			include 'helpers/nav.php';
+			include 'helpers/footer.php';
+			include 'helpers/htmlHeader.php';
+		?>
 		<title>Score Board</title>
+		<?php
+			htmlHeader(pageName);
+		?>
 	</head>
 	<body>
 		<script src="bootstrap-3.3.4-dist/jquery-1.11.3.min.js"></script>
 		<script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
-		<?php 
-			define('pageName', 'scoreboard');
-		?>
 		<div id="wrapper">
 			<div id="header">
 				<h1>Millard West MSCTF 2015</h1>
 			</div>
 			<div id="nav">
 				<?php
-					include 'helpers/nav.php';
 					nav(pageName);
 				?>
 			</div>
@@ -64,7 +66,6 @@
 			</div>
 			<div id = "footer">
 				<?php
-					include 'helpers/footer.php';
 					footer(pageName);
 				?>
 			</div>
