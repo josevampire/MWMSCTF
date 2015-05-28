@@ -83,21 +83,11 @@
 					</div>
 				</div>
 			</div>
-<<<<<<< HEAD
-		</div>
-		<div id = "footer">
-			<?php
-				include 'helpers/footer.php';
-				footer(pageName);
-			?>
-		</div>
-=======
 			<div id = "footer">
 				<?php
 					footer(pageName);
 				?>
 			</div>
->>>>>>> origin/master
 		</div>
 	</body>
 </html>
