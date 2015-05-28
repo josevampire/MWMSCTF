@@ -66,7 +66,7 @@
 		if ($pageName == 'scoreboard') {
 	        echo '<li class="active"><a href="#">ScoreBoard<span class="sr-only">(current)</span></a></li>';
 	    } else {
-	    	echo '<li><a href="' . $pathToRoot . '/scoreboard.php">Score Board</a></li>';
+	    	echo '<li><a href="' . $pathToRoot . 'scoreboard.php">Score Board</a></li>';
 	    }
 	    echo '
 				</ul>
