@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="ISO-8859-1">
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link href="bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
-		
+		<?php 
+			define('pageName', 'index');
+			include 'helpers/htmlHeader.php';
+			include 'helpers/nav.php';
+			include 'helpers/footer.php';
+		?>
 		<title>CTF Home Page</title>
+		<?php
+			htmlHeader(pageName);
+		?>
 	</head>
 	<body>
 		<script src="bootstrap-3.3.4-dist/jquery-1.11.3.min.js"></script>
 		<script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
-		<?php 
-			define('pageName', 'index');
-		?>
 		<div id="wrapper">
 
 			<div id="header">
@@ -49,7 +51,6 @@
 
 			<div id="nav">
 				<?php
-					include 'helpers/nav.php';
 					nav(pageName);
 				?>
 			</div>
@@ -82,6 +83,7 @@
 					</div>
 				</div>
 			</div>
+<<<<<<< HEAD
 		</div>
 		<div id = "footer">
 			<?php
@@ -89,6 +91,13 @@
 				footer(pageName);
 			?>
 		</div>
+=======
+			<div id = "footer">
+				<?php
+					footer(pageName);
+				?>
+			</div>
+>>>>>>> origin/master
 		</div>
 	</body>
 </html>
