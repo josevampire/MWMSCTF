@@ -6,6 +6,7 @@
 			include 'helpers/nav.php';
 			include 'helpers/footer.php';
 			include 'helpers/htmlHeader.php';
+			include 'helpers/signinButton.php';
 		?>
 		<title>Score Board</title>
 		<?php
@@ -18,6 +19,9 @@
 		<div id="wrapper">
 			<div id="header">
 				<h1>Millard West MSCTF 2015</h1>
+				<?php
+					signinButton(pageName);
+				?>
 			</div>
 			<div id="nav">
 				<?php
