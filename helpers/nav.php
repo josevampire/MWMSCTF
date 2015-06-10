@@ -17,7 +17,7 @@
 			</button>
 		';
 
-        echo '<a class="navbar-brand" href="#"><img src="' . $pathToRoot . 'images/logo.png"></a>';
+        echo '<img style="padding-right:6px" class="navebar-brand" src="' . $pathToRoot . 'images/logo.png">';
 
 		echo '
 			</div>
