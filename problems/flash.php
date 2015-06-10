@@ -1,13 +1,15 @@
+<?php 
+	define('pageName', 'flash');
+	include '../helpers/problemModal.php';
+	include '../helpers/nav.php';
+	include '../helpers/footer.php';
+	include '../helpers/htmlHeader.php';
+	include '../helpers/signinButton.php';
+	include '../helpers/preHTMLCode.php';
+?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php 
-			define('pageName', 'flash');
-			include '../helpers/nav.php';
-			include '../helpers/footer.php';
-			include '../helpers/htmlHeader.php';
-			include '../helpers/signinButton.php';
-		?>
 		<title>Flash</title>
 		<?php
 			htmlHeader(pageName);

@@ -1,13 +1,14 @@
+<?php 
+	define('pageName', 'index');
+	include 'helpers/htmlHeader.php';
+	include 'helpers/nav.php';
+	include 'helpers/footer.php';
+	include 'helpers/signinButton.php';
+	include 'helpers/preHTMLCode.php';
+?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php 
-			define('pageName', 'index');
-			include 'helpers/htmlHeader.php';
-			include 'helpers/nav.php';
-			include 'helpers/footer.php';
-			include 'helpers/signinButton.php';
-		?>
 		<title>CTF Home Page</title>
 		<?php
 			htmlHeader(pageName);

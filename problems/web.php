@@ -1,14 +1,15 @@
+<?php 
+	define('pageName', 'web');
+	include '../helpers/problemModal.php';
+	include '../helpers/nav.php';
+	include '../helpers/footer.php';
+	include '../helpers/htmlHeader.php';
+	include '../helpers/signinButton.php';
+	include '../helpers/preHTMLCode.php';
+?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php 
-			define('pageName', 'web');
-			include '../helpers/problemModal.php';
-			include '../helpers/nav.php';
-			include '../helpers/footer.php';
-			include '../helpers/htmlHeader.php';
-			include '../helpers/signinButton.php';
-		?>
 		<title>Web</title>
 		<?php
 			htmlHeader(pageName);
