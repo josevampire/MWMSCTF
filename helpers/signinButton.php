@@ -1,20 +1,21 @@
 <?php
-	$signedIn = false;
-	$username = '';
-
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if ($_POST["username"] == 'admin') {
 			if ($_POST["password"] == 'adminpass') {
-				$signedIn = true;
-				$username = 'Admin';
+				$_SESSION["signedIn"] = 'TRUE';
+				$_SESSION["username"] = 'Admin';
 			}
 		} 
 	}
 
 	function signinButton($pageName) {
-		global $signedIn, $username;
-		if ($signedIn) {
-			echo '<button type="button" class="btn btn-default btn-lg" disabled="disabled">Signed in as ' . $username . '</button>';
+		$pathToRoot = '';
+		if ($pageName != 'index' && pageName != 'scoreboard') {
+			$pathToRoot = '../';
+		}
+		if ($_SESSION["signedIn"] == 'TRUE') {
+			echo '<a href="' . $pathToRoot . 'helpers/logout.php"><button type="button" class="btn btn-default">Sign Out</button></a>
+			<button type="button" class="btn btn-default" disabled="disabled">Signed in as ' . $_SESSION["username"] . '</button>';
 		} else {
 			echo '
 			<button type = "button" class="btn btn-default btn-lg" data-toggle = "modal" data-target="#signIn"> Sign In </button>

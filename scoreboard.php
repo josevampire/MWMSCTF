@@ -1,10 +1,10 @@
 <?php 
 	define('pageName', 'scoreboard');
+	include 'helpers/preHTMLCode.php';
+	include 'helpers/htmlHeader.php';
 	include 'helpers/nav.php';
 	include 'helpers/footer.php';
-	include 'helpers/htmlHeader.php';
 	include 'helpers/signinButton.php';
-	include 'helpers/preHTMLCode.php';
 ?>
 <!DOCTYPE html>
 <html>
