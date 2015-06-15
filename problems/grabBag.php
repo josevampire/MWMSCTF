@@ -33,16 +33,13 @@
 			</div>
 			<div id="body">
 				<div class="row-fluid">
-					<div class="col-xs-6 col-md-6">
-					    <?php
-					    	problemModal(pageName, 1, 200);
-					    ?>
-					</div>
-					<div class="col-xs-6 col-md-6">
-					    <?php
-					    	problemModal(pageName, 2, 500);
-					    ?>
-					</div>
+				    <?php
+				    	problemModal(pageName, 1, 100);
+				    	problemModal(pageName, 2, 200);
+				    	problemModal(pageName, 3, 300);
+				    	problemModal(pageName, 4, 400);
+				    	problemModal(pageName, 5, 500);
+				    ?>
 				</div>
 			</div>
 			<div id = "footer">
