@@ -5,6 +5,7 @@
 	include 'helpers/nav.php';
 	include 'helpers/footer.php';
 	include 'helpers/signinButton.php';
+	include 'helpers/scoreboard.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,39 +34,9 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Scoreboard and Ranks</div>
 					<table class="table table-hover">
-						<tr>
-						    <th>Rank</th>
-						    <th>Team Name</th> 
-						    <th>Points</th>
-					  	</tr>
-					  	<tr>
-						  	<tr class="success">
-						    <td><b>#1</b></td>
-						    <td>1337 Haxors</td> 
-						    <td>94</td>
-						</tr>
-						<tr>
-							<tr class="warning">
-						    <td><b>#2</b></td>
-						    <td>The Best</td> 
-						    <td>91</td>
-						</tr>
-						<tr>
-							<tr class="active">
-						    <td><b>#3</b></td>
-						    <td>Yo Peeps</td> 
-						    <td>87</td>
-						</tr>
-						<tr>
-					    	<td><b>#4</b></td>
-					    	<td>Nick</td> 
-					    	<td>4</td>
-						</tr>
-						<tr>
-					    	<td><b>#5</b></td>
-					    	<td>Nico</td> 
-					    	<td>-14</td>
-						</tr>
+						<?php
+							scoreboard();
+						?>
 					</table>
 				</div>
 			</div>
