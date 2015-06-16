@@ -1,11 +1,8 @@
 <?php
 	session_start();
-	$conn = mysqli_connect('localhost', 'marcuzzo_mwmsctf', 'N_w7S3GfLBk&', 'marcuzzo_ctf')  or die("Error " . mysqli_error($link));
-	if (!$conn) {
-	    die('Connect Error (' . mysqli_connect_errno() . ') ' . mysqli_connect_error());
-	}
+	include 'mysqlLogin.php';
 
-	$keyAttempt = mysql_real_escape_string(stripslashes($_POST["keyAttempt"]));
+	$keyAttempt = mysqli_real_escape_string($conn, stripslashes($_POST["keyAttempt"]));
 	$pageName = $_GET["pageName"];
 	$problemNum = $_GET["problemNum"];
 	$pointValue = $_GET["pointValue"];
@@ -26,6 +23,8 @@
 	if ($key == strtolower ($keyAttempt)) {
 		$_SESSION["answerState"] = 20 + $problemNum;
 		$sql = "UPDATE scores SET $pageName$pointValue='TRUE' WHERE user='$user'";
+		mysqli_query($conn, $sql);
+		$sql = "UPDATE scores SET score= score + $pointValue WHERE user='$user'";
 		mysqli_query($conn, $sql);
 	} else {
 		$_SESSION["answerState"] = 10 + $problemNum;

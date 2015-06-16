@@ -9,4 +9,7 @@
 	if (!isset($_SESSION['answerState'])) {
 		$_SESSION['answerState'] = 0;
 	}
+	if (!isset($_SESSION['username'])) {
+		$_SESSION['username'] = "";
+	}
 ?>

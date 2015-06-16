@@ -6,10 +6,7 @@
 		$pathToRoot = '../';
 	}
 
-	$conn = mysqli_connect('localhost', 'marcuzzo_mwmsctf', 'N_w7S3GfLBk&', 'marcuzzo_ctf')  or die("Error " . mysqli_error($link));
-	if (!$conn) {
-	    die('Connect Error (' . mysqli_connect_errno() . ') ' . mysqli_connect_error());
-	}
+	include 'mysqlLogin.php';
 
 	$sql = "SELECT * FROM questions WHERE category = '$pageName' AND pointValue = '$pointValue'";
 	$result = mysqli_query($conn, $sql);

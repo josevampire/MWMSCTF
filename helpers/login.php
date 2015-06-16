@@ -1,17 +1,13 @@
 <?php
 	session_start();
-	$conn = mysqli_connect('localhost', '', '', 'ctf');
-	if (!$conn) {
-	    die('Connect Error (' . mysqli_connect_errno() . ') ' . mysqli_connect_error());
-	}
+	include 'mysqlLogin.php';
 
 	$givenUsername = $_POST["username"];
 	$givenPass = $_POST["password"];
 	$referingPage = $_GET['pageName'];
 
-	$safeUsername = mysql_real_escape_string(stripslashes($givenUsername));
-	$safePass = mysql_real_escape_string(stripslashes($givenPass));
-
+	$safeUsername = mysqli_real_escape_string($conn, stripslashes($givenUsername));
+	$safePass = mysqli_real_escape_string($conn, stripslashes($givenPass));
 	$sql = "SELECT * FROM users WHERE username = '$safeUsername' AND password = '$safePass'";
 	$result = mysqli_query($conn, $sql);
 	$count = mysqli_num_rows($result);
