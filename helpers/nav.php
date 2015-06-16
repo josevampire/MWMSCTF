@@ -59,6 +59,13 @@
 	    } else {
 	    	echo '<li><a href="' . $pathToRoot . 'problems/flash.php">Flash</a></li>';
 	    }
+	    if ($_SESSION['admin']) {
+	    	if ($pageName == 'admin') {
+		        echo '<li class="active"><a href="#">Admin<span class="sr-only">(current)</span></a></li>';
+		    } else {
+		    	echo '<li><a href="' . $pathToRoot . 'admin.php">Admin</a></li>';
+		    }
+	    }
 	    echo '
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">

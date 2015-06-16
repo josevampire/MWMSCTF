@@ -1,7 +1,7 @@
 <?php
 	function footer($pageName) {
 		$pathToRoot = '';
-		if ($pageName != 'index' && $pageName != 'scoreboard') {
+		if ($pageName != 'index' && $pageName != 'scoreboard' && $pageName != 'admin') {
 			$pathToRoot = '../';
 		}
 		echo '<p>&copy; 2015 Nicko, Inc. 

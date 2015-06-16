@@ -1,7 +1,7 @@
 <?php
 	function signinButton($pageName) {
 		$pathToRoot = '';
-		if ($pageName != 'index' && pageName != 'scoreboard') {
+		if ($pageName != 'index' && $pageName != 'scoreboard' && $pageName != 'admin') {
 			$pathToRoot = '../';
 		}
 		if ($_SESSION['loginFail']) {

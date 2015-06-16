@@ -15,6 +15,9 @@
 		$row = mysqli_fetch_assoc($result);
 		$_SESSION["signedIn"] = 'TRUE';
 		$_SESSION["username"] = $row["username"];
+		if ($row['admin'] == "TRUE") {
+			$_SESSION["admin"] = TRUE;
+		}
 	} else {
 		$_SESSION["loginFail"] = TRUE;
 	}

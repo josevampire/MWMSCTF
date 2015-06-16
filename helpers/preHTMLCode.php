@@ -12,4 +12,7 @@
 	if (!isset($_SESSION['username'])) {
 		$_SESSION['username'] = "";
 	}
+	if (!isset($_SESSION['admin'])) {
+		$_SESSION['admin'] = "";
+	}
 ?>
