@@ -1,4 +1,8 @@
 <?php
+	if (!$_SESSION['gameInProgress'] && !$_SESSION['admin']) {
+		header("Location: ../index.php");
+	}
+
 	function problemModal($pageName, $problemNum, $pointValue) {
 	$titleName;
 	$pathToRoot = '';

@@ -12,7 +12,7 @@
 			    });
 			</script>';
 		}
-		if ($_SESSION["signedIn"] == 'TRUE') {
+		if ($_SESSION["signedIn"]) {
 			echo '<a href="' . $pathToRoot . 'helpers/logout.php"><button type="button" class="btn btn-default">Sign Out</button></a>
 			<button type="button" class="btn btn-default" disabled="disabled">Signed in as ' . $_SESSION["username"] . '</button>';
 		} else {
@@ -29,7 +29,7 @@
 				      <div class="modal-body">';
 				      if ($_SESSION['loginFail']) {
 				      	echo '<div class="alert alert-danger" role="alert">Either username or password is incorrect. Please try again.</div>';
-				      	$_SESSION['loginFail'] = false;
+				      	$_SESSION['loginFail'] = FALSE;
 				      }
 				      echo '
 				        <p> Enter your account information </p>

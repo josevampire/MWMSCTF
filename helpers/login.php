@@ -13,7 +13,7 @@
 	$count = mysqli_num_rows($result);
 	if ($count == 1) {
 		$row = mysqli_fetch_assoc($result);
-		$_SESSION["signedIn"] = 'TRUE';
+		$_SESSION["signedIn"] = TRUE;
 		$_SESSION["username"] = $row["username"];
 		if ($row['admin'] == "TRUE") {
 			$_SESSION["admin"] = TRUE;

@@ -4,6 +4,13 @@
 		if ($pageName != 'index' && pageName != 'scoreboard') {
 			$pathToRoot = '../';
 		}
+		$disabledText = '';
+		$href = TRUE;
+
+		if (!$_SESSION['gameInProgress'] && !$_SESSION['admin']) {
+			$disabledText = 'disabled';
+			$href = FALSE;
+		}
 
 		echo '
 			<nav class="navbar navbar-default">
@@ -25,43 +32,43 @@
 			<ul class="nav navbar-nav">
 		';
 	    if ($pageName == 'index') {
-	        echo '<li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>';
+	        echo '<li class="active"><a>Home<span class="sr-only">(current)</span></a></li>';
 	    } else {
 	    	echo '<li><a href="' . $pathToRoot . 'index.php">Home</a></li>';
 	    }
 	    if ($pageName == 'crypto') {
-	        echo '<li class="active"><a href="#">Crypto<span class="sr-only">(current)</span></a></li>';
+	        echo '<li class="active ' . $disabledText . '"><a>Crypto<span class="sr-only">(current)</span></a></li>';
 	    } else {
-	    	echo '<li><a href="' . $pathToRoot . 'problems/crypto.php">Crypto</a></li>';
+	    	echo '<li class=" ' . $disabledText . '"><a'; if ($href) {echo ' href="' . $pathToRoot . 'problems/crypto.php"';} echo '>Crypto</a></li>';
 	    }
 	    if ($pageName == 'trivia') {
-	        echo '<li class="active"><a href="#">Trivia<span class="sr-only">(current)</span></a></li>';
+	        echo '<li class="active ' . $disabledText . '"><a>Trivia<span class="sr-only">(current)</span></a></li>';
 	    } else {
-	    	echo '<li><a href="' . $pathToRoot . 'problems/trivia.php">Trivia</a></li>';
+	    	echo '<li class=" ' . $disabledText . '"><a'; if ($href) {echo ' href="' . $pathToRoot . 'problems/trivia.php"';} echo '>Trivia</a></li>';
 	    }
 	    if ($pageName == 'web') {
-	        echo '<li class="active"><a href="#">Web<span class="sr-only">(current)</span></a></li>';
+	        echo '<li class="active ' . $disabledText . '"><a>Web<span class="sr-only">(current)</span></a></li>';
 	    } else {
-	    	echo '<li><a href="' . $pathToRoot . 'problems/web.php">Web</a></li>';
+	    	echo '<li class=" ' . $disabledText . '"><a'; if ($href) {echo ' href="' . $pathToRoot . 'problems/web.php"';} echo '>Web</a></li>';
 	    }
 	    if ($pageName == 'recon') {
-	        echo '<li class="active"><a href="#">Recon<span class="sr-only">(current)</span></a></li>';
+	        echo '<li class="active ' . $disabledText . '"><a>Recon<span class="sr-only">(current)</span></a></li>';
 	    } else {
-	    	echo '<li><a href="' . $pathToRoot . 'problems/recon.php">Recon</a></li>';
+	    	echo '<li class=" ' . $disabledText . '"><a'; if ($href) {echo ' href="' . $pathToRoot . 'problems/recon.php"';} echo '>Recon</a></li>';
 	    }
 	    if ($pageName == 'grabBag') {
-	        echo '<li class="active"><a href="#">Grab Bag<span class="sr-only">(current)</span></a></li>';
+	        echo '<li class="active ' . $disabledText . '"><a>Grab Bag<span class="sr-only">(current)</span></a></li>';
 	    } else {
-	    	echo '<li><a href="' . $pathToRoot . 'problems/grabBag.php">Grab Bag</a></li>';
+	    	echo '<li class=" ' . $disabledText . '"><a'; if ($href) {echo ' href="' . $pathToRoot . 'problems/grabBag.php"';} echo '>Grab Bag</a></li>';
 	    }
 		if ($pageName == 'flash') {
-	        echo '<li class="active"><a href="#">Flash<span class="sr-only">(current)</span></a></li>';
+	        echo '<li class="active ' . $disabledText . '"><a>Flash<span class="sr-only">(current)</span></a></li>';
 	    } else {
-	    	echo '<li><a href="' . $pathToRoot . 'problems/flash.php">Flash</a></li>';
+	    	echo '<li class=" ' . $disabledText . '"><a'; if ($href) {echo ' href="' . $pathToRoot . 'problems/flash.php"';} echo '>Flash</a></li>';
 	    }
 	    if ($_SESSION['admin']) {
 	    	if ($pageName == 'admin') {
-		        echo '<li class="active"><a href="#">Admin<span class="sr-only">(current)</span></a></li>';
+		        echo '<li class="active"><a>Admin<span class="sr-only">(current)</span></a></li>';
 		    } else {
 		    	echo '<li><a href="' . $pathToRoot . 'admin.php">Admin</a></li>';
 		    }
@@ -71,7 +78,7 @@
 		      <ul class="nav navbar-nav navbar-right">
 		';
 		if ($pageName == 'scoreboard') {
-	        echo '<li class="active"><a href="#">ScoreBoard<span class="sr-only">(current)</span></a></li>';
+	        echo '<li class="active"><a>Score Board<span class="sr-only">(current)</span></a></li>';
 	    } else {
 	    	echo '<li><a href="' . $pathToRoot . 'scoreboard.php">Score Board</a></li>';
 	    }
