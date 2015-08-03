@@ -1,68 +1,61 @@
 @import url(http://fonts.googleapis.com/css?family=Oswald:300);
-
 body {
-	background-image: url("images/gray_linen.png");
+  background-image: url("images/gray_linen.png");
 }
-
 div#wrapper {
-	width: 900px;
-	margin: auto;
+  width: 900px;
+  margin: auto;
 }
-
 div#header {
-	padding: 15px;
-	padding-right: 0px;
-	
+  padding: 15px;
+  padding-right: 0px;
 }
 .btn {
-	background-color: lightgreen;
-	margin-left: 5px;
+  background-color: lightgreen;
+  margin-left: 5px;
 }
-div#header h1{
-	display: inline;
-	color: #009C3E;
-	font-family: Oswald;
-	font-style:  italic;
+div#header h1 {
+  display: inline;
+  color: #009C3E;
+  font-family: Oswald;
+  font-style: italic;
 }
-
-div#header button{
-	float: right;
-	padding-top: 7px;
-	padding-bottom: 7px;
-	margin-top: 7px;
-	color: #555;
-	font-size: 14px;
-	outline: none;
+div#header button {
+  float: right;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-top: 7px;
+  color: #555;
+  font-size: 14px;
+  outline: none;
 }
-
 a.navbar-brand {
-	padding-top: 0px;
+  padding-top: 0px;
 }
-
 button.thumbnail {
-    outline: none;
+  outline: none;
 }
-div#body{
-	overflow:auto;
+div#body {
+  overflow: auto;
 }
 div#footer {
-	width: 900px;
-	margin: auto;
-	padding: 10px;
-	border-top: 1px solid gray;
-	color: white;
+  width: 900px;
+  margin: auto;
+  padding: 10px;
+  border-top: 1px solid gray;
+  color: white;
 }
-div#footer a{
-	color: #B0B0B0;
+div#footer a {
+  color: #B0B0B0;
 }
-div#footer p{
-	margin: auto;
-	display: inline;
+div#footer p {
+  margin: auto;
+  display: inline;
 }
-div#footer img.image{
-	float: right;
+div#footer img.image {
+  float: right;
 }
-img#triv100{
-	display: block;
-	margin: 20px auto;
+img#triv100 {
+  display: block;
+  margin: 20px auto;
 }

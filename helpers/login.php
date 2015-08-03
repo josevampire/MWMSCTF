@@ -8,8 +8,7 @@
 
 	$safeUsername = mysqli_real_escape_string($conn, stripslashes($givenUsername));
 	$safePass = mysqli_real_escape_string($conn, stripslashes($givenPass));
-	$sql = "SELECT * FROM users WHERE username = '$safeUsername' AND password = '$safePass'";
-	$result = mysqli_query($conn, $sql);
+	$result = mysqli_query($conn, "SELECT * FROM users WHERE username = '$safeUsername' AND password = '$safePass'");
 	$count = mysqli_num_rows($result);
 	if ($count == 1) {
 		$row = mysqli_fetch_assoc($result);
@@ -17,6 +16,12 @@
 		$_SESSION["username"] = $row["username"];
 		if ($row['admin'] == "TRUE") {
 			$_SESSION["admin"] = TRUE;
+		}
+		if ($row['firstLogon'] == "TRUE") {
+			$result = mysqli_query($conn, "INSERT INTO scores (user) VALUES ('" . $_SESSION["username"] . "')");
+			if ($result) {
+				$result = mysqli_query($conn, "UPDATE users SET firstLogon='FALSE' WHERE username='" . $_SESSION["username"] . "'");
+			}
 		}
 	} else {
 		$_SESSION["loginFail"] = TRUE;
@@ -28,6 +33,6 @@
 	} else {
 		$pathBack = '../problems/' . $referingPage . '.php';
 	}
-	
+
 	header('Location:' . $pathBack);
 ?>
