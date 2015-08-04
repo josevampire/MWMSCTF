@@ -26,8 +26,12 @@
 	$disabledForm = '';
 	if (!$row["question"] == NULL) {
 		$questionText = $row["question"];
-		$disabledForm = 'placeholder=""';
-	} else {
+		if ($row["answer"] == NULL) {
+			$disabledForm = 'id="disabledInput" placeholder="This challange has no flag." disabled';
+		} else {
+			$disabledForm = 'placeholder=""';
+		}
+	}	else {
 		$questionText = "No question yet, check back later!";
 		$disabledForm = 'id="disabledInput" placeholder="Question not yet open." disabled';
 	}
@@ -61,7 +65,7 @@
 		$titleName = 'Trivia';
 	} else if ($pageName == 'web') {
 		$titleName = 'Web';
-	} 
+	}
 
 	if ($_SESSION['answerState'] > 0) {
 		echo '
