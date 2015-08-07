@@ -169,8 +169,10 @@ GameManager.prototype.move = function (direction) {
           // The mighty 2048 tile
           if (merged.value === 2048) {
             self.won = true;
+            // Signals CTF Server
             setTimeout(function(){
-                window.location.href = "nailedit.php";
+                var curTime = new Date().getTime() / 1000;
+                window.location.href = "nailedit.php?key=" + curTime;
             }, 3000);
           }
         } else {
