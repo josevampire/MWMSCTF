@@ -1,4 +1,4 @@
-<?php 
+<?php
 	define('pageName', 'grabBag');
 	include '../helpers/preHTMLCode.php';
 	include '../helpers/problemModal.php';
@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Web</title>
+		<title>GrabBag</title>
 		<?php
 			htmlHeader(pageName);
 		?>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 	define('pageName', 'trivia');
 	include '../helpers/preHTMLCode.php';
 	include '../helpers/problemModal.php';
@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Cryptography</title>
+		<title>Trivia</title>
 		<?php
 			htmlHeader(pageName);
 		?>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 	define('pageName', 'admin');
 	include 'helpers/preHTMLCode.php';
 	include 'helpers/htmlHeader.php';
@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Administration</title>
+		<title>Administration Tools</title>
 		<?php
 			htmlHeader(pageName);
 		?>
