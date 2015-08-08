@@ -13,8 +13,6 @@
     $user = $_SESSION['username'];
     $sql = "UPDATE scores SET grabBag100='TRUE' WHERE user='$user'";
     mysqli_query($conn, $sql);
-    $sql = "UPDATE scores SET score= score + 100 WHERE user='$user'";
-    mysqli_query($conn, $sql);
     echo '<script>setTimeout(function(){
               var curTime = new Date().getTime() / 1000;
               window.location.href = "../../../grabBag.php";

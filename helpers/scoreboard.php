@@ -1,11 +1,12 @@
 <?php
 	function scoreboard() {
 		include "mysqlLogin.php";
-
+		include "scoreTabulation.php";
+		
 		echo '
 			<tr>
 			    <th>Rank</th>
-			    <th>Team Name</th> 
+			    <th>Team Name</th>
 			    <th>Points</th>
 		  	</tr>';
 
@@ -15,42 +16,42 @@
 			$rowNum = 1;
 			$lastScore = -1;
 			$rowTags = "";
-		    while($row = mysqli_fetch_array($result)) {
-		        $rank = "";
-		        if ($lastScore != $row['score']) {
-		        	$rank = "#$rowNum";
-		        	if ($rowNum == 1) {
-			        	$rowTags = 'class="success"';
-			        } else if ($rowNum == 2) {
-			        	$rowTags = 'class="warning"';
-			        } else if ($rowNum == 3) {
-			        	$rowTags = 'class="info"';
-			        } else {
-			        	$rowTags = '';
-			        }
-		 		}
-		        if ($row['user'] == $_SESSION['username']) {
-					echo "
-					<tr>
-					  	<tr " . $rowTags . ">
-					    <td><b>$rank</b></td>
-					    <td><b>" . $row['user'] . "</b></td> 
-					    <td><b>" . $row["score"] . "</b></td>
-					</tr>";
+	    while($row = mysqli_fetch_array($result)) {
+	        $rank = "";
+	        if ($lastScore != $row['score']) {
+	        	$rank = "#$rowNum";
+	        	if ($rowNum == 1) {
+		        	$rowTags = 'class="success"';
+		        } else if ($rowNum == 2) {
+		        	$rowTags = 'class="warning"';
+		        } else if ($rowNum == 3) {
+		        	$rowTags = 'class="info"';
 		        } else {
-		        	echo "
-					<tr>
-					  	<tr " . $rowTags . ">
-					    <td><b>$rank</b></td>
-					    <td>" . $row['user'] . "</td> 
-					    <td>" . $row["score"] . "</td>
-					</tr>";
+		        	$rowTags = '';
 		        }
-		        $rowNum++;
-		        $lastScore = $row['score'];
-		    }
-	    } else {
-	    	die("Query failed");
+	 				}
+	        if ($row['user'] == $_SESSION['username']) {
+						echo "
+						<tr>
+						  	<tr " . $rowTags . ">
+						    <td><b>$rank</b></td>
+						    <td><b>" . $row['user'] . "</b></td>
+						    <td><b>" . $row["score"] . "</b></td>
+						</tr>";
+	        } else {
+	        	echo "
+						<tr>
+						  	<tr " . $rowTags . ">
+						    <td><b>$rank</b></td>
+						    <td>" . $row['user'] . "</td>
+						    <td>" . $row["score"] . "</td>
+						</tr>";
+	        }
+	        $rowNum++;
+	        $lastScore = $row['score'];
 	    }
+    } else {
+    	die("Query failed");
+    }
 	}
 ?>

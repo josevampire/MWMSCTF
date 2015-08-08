@@ -24,8 +24,6 @@
 		$_SESSION["answerState"] = 20 + $problemNum;
 		$sql = "UPDATE scores SET $pageName$pointValue='TRUE' WHERE user='$user'";
 		mysqli_query($conn, $sql);
-		$sql = "UPDATE scores SET score= score + $pointValue WHERE user='$user'";
-		mysqli_query($conn, $sql);
 	} else {
 		$_SESSION["answerState"] = 10 + $problemNum;
 	}
@@ -36,6 +34,6 @@
 	} else {
 		$pathBack = '../problems/' . $pageName . '.php';
 	}
-	
+
 	header('Location:' . $pathBack);
 ?>
