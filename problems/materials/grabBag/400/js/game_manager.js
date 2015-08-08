@@ -186,10 +186,6 @@ GameManager.prototype.move = function (direction) {
 
     if (!this.movesAvailable()) {
       this.over = true; // Game over!
-      setTimeout(function(){
-          var curTime = new Date().getTime() / 1000;
-          window.location.href = "nailedit.php?key=" + curTime;
-      }, 3000);
     }
 
     this.actuate();
