@@ -32,7 +32,13 @@
 			</div>
 			<div id="body">
 				<div class="panel panel-default">
-					<h3 style='padding-left: 10px'>Administration Tools</h3>
+					<div class="panel-body">
+						<h3 style='padding-left: 10px'>Administration Tools</h3>
+						<hr>
+						<?php
+							toggleGameState();
+						?>
+					</div>
 				</div>
 			</div>
 			<div id = "footer">
