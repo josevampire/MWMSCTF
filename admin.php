@@ -5,7 +5,7 @@
 	include 'helpers/nav.php';
 	include 'helpers/footer.php';
 	include 'helpers/signinButton.php';
-	include 'helpers/adminFunctions.php';
+	include 'helpers/adminTools.php';
 ?>
 <!DOCTYPE html>
 <html>
