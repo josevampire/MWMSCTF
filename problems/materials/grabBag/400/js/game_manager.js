@@ -171,7 +171,8 @@ GameManager.prototype.move = function (direction) {
             self.won = true;
             setTimeout(function(){
                 var curTime = new Date().getTime() / 1000;
-                curTime = (curTime + Math.floor((Math.random() * 10000) + 1)) - Math.floor((Math.random() * 10000) + 1);
+                var ran = Math.floor((Math.random() * 10000) + 1);
+                curTime = (curTime + ran) - Math.floor((Math.random() * ran) + 1);
                 window.location.href = "nailedit.php?key=" + curTime;
             }, 3000);
           }
