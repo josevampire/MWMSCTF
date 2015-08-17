@@ -1,4 +1,4 @@
-<?php 
+<?php
 	define('pageName', 'scoreboard');
 	include 'helpers/preHTMLCode.php';
 	include 'helpers/htmlHeader.php';
@@ -32,7 +32,7 @@
 			</div>
 			<div id="body">
 				<div class="panel panel-default">
-					<div class="panel-heading">Scoreboard and Ranks</div>
+					<div id ="scoreboard" class="panel-heading">Scoreboard and Ranks</div>
 					<table class="table table-hover">
 						<?php
 							scoreboard();
