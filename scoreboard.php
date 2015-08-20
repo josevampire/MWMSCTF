@@ -38,8 +38,8 @@
 								scoreboard();
 							?>
 						</table>
+					</div>
 				</div>
-			</div>
 			<div id = "footer">
 				<?php
 					footer(pageName);
