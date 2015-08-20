@@ -33,11 +33,11 @@
 			<div id="body">
 				<div class="panel panel-default">
 					<div id ="scoreboard" class="panel-heading">Scoreboard and Ranks</div>
-					<table class="table table-hover">
-						<?php
-							scoreboard();
-						?>
-					</table>
+						<table class="table table-hover table-striped">
+							<?php
+								scoreboard();
+							?>
+						</table>
 				</div>
 			</div>
 			<div id = "footer">
