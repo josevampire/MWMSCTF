@@ -2,7 +2,7 @@
 	function scoreboard() {
 		include "mysqlLogin.php";
 		include "scoreTabulation.php";
-		
+
 		echo '
 			<tr>
 			    <th>Rank</th>
@@ -34,7 +34,7 @@
 						echo "
 						<tr>
 						  	<tr " . $rowTags . ">
-						    <td><b>$rank</b></td>
+						    <td style='width:40px'><b>$rank</b></td>
 						    <td><b>" . $row['user'] . "</b></td>
 						    <td><b>" . $row["score"] . "</b></td>
 						</tr>";
