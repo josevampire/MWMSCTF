@@ -34,7 +34,7 @@
 						echo "
 						<tr>
 						  	<tr " . $rowTags . ">
-							    <td style='width:40px'><b>$rank</b></td>
+							    <td style='width:40px; border-right:1px solid #ddd; text-align:center'><b>$rank</b></td>
 							    <td><b>" . $row['user'] . "</b></td>
 							    <td><b>" . $row["score"] . "</b></td>
 								</tr>";
@@ -42,7 +42,7 @@
 	        	echo "
 						<tr>
 						  	<tr " . $rowTags . ">
-						    <td style='width:40px'><b>$rank</b></td>
+						    <td style='width:40px; border-right:1px solid #ddd; text-align:center'><b>$rank</b></td>
 						    <td>" . $row['user'] . "</td>
 						    <td>" . $row["score"] . "</td>
 						</tr>";
