@@ -35,20 +35,20 @@
     <div class="panel panel-default">
 			<div class="panel-body">
 				<h4 style="display:inline-block">Add a User.</h4>
-        <form method="post" class="form" action="helpers/adminFunctions.php?action=addUser" style="width:300px;display:block;float:right">
+        <form method="post" class="form" action="helpers/adminFunctions.php?action=addUser" style="width:300px;display:block">
         <div class="form-group">
-          <label for="inputUsername" style="float:right"> Username </label>
+          <label for="inputUsername"> Username </label>
           <input type="text" class="form-control" name="username" placeholder="Username">
         </div>
         <div class="form-group">
-          <label for="inputPassword" style="float:right">Password</label>
+          <label for="inputPassword">Password</label>
           <input type="password" class="form-control" name="password" placeholder="Password">
         </div>
-        <label for="checkbox1" style="float:right">Admin</lable>
-        <input type="checkbox" id="checkbox1" value="admin"/>
+        <label for="checkbox1">Admin</lable>
+        <input type="checkbox" id="checkbox1" name="admin" value="true"/>
         <br>
         <br>
-        <button type="submit" class="btn btn-default">Sign in</button>
+        <button type="submit" class="btn btn-default" style="margin:0px">Sign in</button>
       </div>
     </div>
     ';

@@ -25,6 +25,9 @@
 				}
 				header("Location: ../admin.php");
 				break;
+			case 'addUser':
+				print_r($_POST);
+				break;
 			default:
 				die("Not a valid action");
 		}
