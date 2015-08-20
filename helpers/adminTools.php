@@ -23,10 +23,34 @@
 		echo '
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<h5 style="display:inline-block">Toggle game status.</h5>
+				<h4 style="display:inline-block">Toggle game status.</h4>
 				<a href="helpers/adminFunctions.php?action=switchState" class="btn btn-default pull-right" style="display:inline-block">'. $buttonText . '</a>
 			</div>
 		</div>
 		';
 	}
+
+  function addUserField() {
+    echo '
+    <div class="panel panel-default">
+			<div class="panel-body">
+				<h4 style="display:inline-block">Add a User.</h4>
+        <form method="post" class="form" action="helpers/adminFunctions.php?action=addUser" style="width:300px;display:block;float:right">
+        <div class="form-group">
+          <label for="inputUsername" style="float:right"> Username </label>
+          <input type="text" class="form-control" name="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+          <label for="inputPassword" style="float:right">Password</label>
+          <input type="password" class="form-control" name="password" placeholder="Password">
+        </div>
+        <label for="checkbox1" style="float:right">Admin</lable>
+        <input type="checkbox" id="checkbox1" value="admin"/>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-default">Sign in</button>
+      </div>
+    </div>
+    ';
+  }
 ?>

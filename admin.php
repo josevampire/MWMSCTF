@@ -37,6 +37,7 @@
 						<hr>
 						<?php
 							toggleGameState();
+							addUserField();
 						?>
 					</div>
 				</div>
