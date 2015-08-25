@@ -4,7 +4,7 @@
 	include 'helpers/htmlHeader.php';
 	include 'helpers/nav.php';
 	include 'helpers/footer.php';
-	include 'helpers/signinButton.php';
+	include 'helpers/header.php';
 	include 'helpers/adminTools.php';
 ?>
 <!DOCTYPE html>
@@ -20,7 +20,6 @@
 		<script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 		<div id="wrapper">
 			<div id="header">
-				<h1>Millard West MSCTF 2015</h1>
 				<?php
 					signinButton(pageName);
 				?>

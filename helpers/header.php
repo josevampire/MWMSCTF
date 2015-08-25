@@ -1,5 +1,8 @@
 <?php
 	function signinButton($pageName) {
+// Header text
+		echo "<h1>Millard West MSCTF 2015</h1>";
+// Sign in button
 		$pathToRoot = '';
 		if ($pageName != 'index' && $pageName != 'scoreboard' && $pageName != 'admin') {
 			$pathToRoot = '../';
@@ -17,7 +20,7 @@
 			<button type="button" class="btn btn-default" disabled="disabled">Signed in as ' . $_SESSION["username"] . '</button>';
 		} else {
 			echo '
-			<button type = "button" class="btn btn-default btn-lg" data-toggle = "modal" data-target="#signIn"> Sign In </button>
+			<button type = "button" class="btn btn-default btn-lg pull-right" data-toggle = "modal" data-target="#signIn"> Sign In </button>
 			<div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
 			  <div class="modal-dialog">
 			    <div class="modal-content">
@@ -51,6 +54,30 @@
 		      </div>
 			</div>
 			';
+		}
+// Game state indicator
+		include $pathToRoot . 'helpers/mysqlLogin.php';
+		if (date('i')) {
+			$timeDiff = (7 * 60 * 60);
+		} else {
+			$timeDiff = (8 * 60 * 60);
+		}
+		$sql = "SELECT * FROM settings WHERE name = 'gameInProgress'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		if ($row['value'] == "TRUE") {
+			$sql = "SELECT * FROM settings WHERE name = 'openUntil'";
+			$result = mysqli_query($conn, $sql);
+			$row = mysqli_fetch_assoc($result);
+			$endTime = $row['value'] - $timeDiff;
+			$endTimeString = date('g:i \o\n D M j, Y', $endTime);
+			echo '<div style="display:inline" class="">
+			<button type="button" class="btn btn-default" disabled="disabled">This game ends at: ' . $endTimeString . '</button>
+			</div>';
+		} else {
+			echo '<div style="display:inline" class="">
+			<button type="button" class="btn btn-default" disabled="disabled">Game Closed</button>
+			</div>';
 		}
 	}
 ?>

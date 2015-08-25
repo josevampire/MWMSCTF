@@ -1,11 +1,11 @@
-<?php 
+<?php
 	define('pageName', 'recon');
 	include '../helpers/preHTMLCode.php';
 	include '../helpers/problemModal.php';
 	include '../helpers/nav.php';
 	include '../helpers/footer.php';
 	include '../helpers/htmlHeader.php';
-	include '../helpers/signinButton.php';
+	include '../helpers/header.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,7 +20,6 @@
 		<script src="../bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 		<div id="wrapper">
 			<div id="header">
-				<h1>Millard West MSCTF 2015</h1>
 				<?php
 					signinButton(pageName);
 				?>
