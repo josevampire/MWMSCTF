@@ -17,6 +17,17 @@
 	}
 
 	include 'mysqlLogin.php';
+
+	$sql = "SELECT * FROM settings WHERE name = 'openUntil'";
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);
+	if ($row['value'] <= time()) {
+		$sql = "UPDATE settings SET value = 'FALSE' WHERE name = 'gameInProgress'";
+		$result = mysqli_query($conn, $sql);
+		$sql = "UPDATE settings SET value = '' WHERE name = 'openUntil'";
+		$result = mysqli_query($conn, $sql);
+	}
+
 	$sql = "SELECT * FROM settings WHERE name = 'gameInProgress'";
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);

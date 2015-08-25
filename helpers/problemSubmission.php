@@ -2,6 +2,10 @@
 	session_start();
 	include 'mysqlLogin.php';
 
+	if (!$_SESSION['gameInProgress'] && !$_SESSION['admin']) {
+		header('Location: ../index.php');
+	}
+
 	$keyAttempt = mysqli_real_escape_string($conn, stripslashes($_POST["keyAttempt"]));
 	$pageName = $_GET["pageName"];
 	$problemNum = $_GET["problemNum"];

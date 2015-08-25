@@ -18,24 +18,48 @@
 		$row = mysqli_fetch_assoc($result);
 		if ($row['value'] == 'TRUE') {
 			$buttonText = 'Stop Game';
+      echo '
+      <div class="panel panel-default">
+  			<div class="panel-body">
+  				<h4 style="display:inline-block">Toggle game State</h4>
+  				<a href="helpers/adminFunctions.php?action=switchState" class="btn btn-default pull-right" style="display:inline-block">'. $buttonText . '</a>
+  			</div>
+  		</div>
+  		';
 		} else {
-			$buttonText = 'Start Game';
+      echo '
+      <div class="panel panel-default">
+  			<div class="panel-body">
+  				<h4 style="display:inline-block">Toggle Game State</h4>
+          <form class="form-inline pull-right" method="post" action="helpers/adminFunctions.php?action=switchState">
+            <div class="form-group">
+              <label class="sr-only" for="gameLength">Game Length (in hours)</label>
+              <div class="input-group" style="width:175px">
+                <input type="text" class="form-control" id="gameLength" placeholder="Game Days" name="gameDays">
+                <div class="input-group-addon">Days</div>
+              </div>
+              <div class="input-group" style="width:175px">
+                <input type="text" class="form-control" id="gameLength" placeholder="Game Hours" name="gameHours">
+                <div class="input-group-addon">Hours</div>
+              </div>
+              <div class="input-group" style="width:175px">
+                <input type="text" class="form-control" id="gameLength" placeholder="Game Mins" name="gameMins">
+                <div class="input-group-addon">Mins</div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Start Game</button>
+          </form>
+  			</div>
+  		</div>
+  		';
 		}
-		echo '
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<h4 style="display:inline-block">Toggle game status.</h4>
-				<a href="helpers/adminFunctions.php?action=switchState" class="btn btn-default pull-right" style="display:inline-block">'. $buttonText . '</a>
-			</div>
-		</div>
-		';
 	}
 
   function addUserField() {
     echo '
     <div class="panel panel-default">
 			<div class="panel-body">
-				<h4>Add a User.</h4>
+				<h4>Add a User</h4>
         ';
         if(isset($_GET['userCreation'])){
           if($_GET['userCreation'] == 'FALSE'){
