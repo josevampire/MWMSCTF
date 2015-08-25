@@ -29,7 +29,7 @@
 						} else {
 							$timeDiff = (8 * 60 * 60);
 						}
-						$endEpoch = time() + ($_POST['gameHours'] * 60 * 60) + ($_POST['gameMins'] * 60);
+						$endEpoch = time() + ($_POST['gameDays'] * 24 * 60 * 60) + ($_POST['gameHours'] * 60 * 60) + ($_POST['gameMins'] * 60);
 						$sql = "UPDATE settings SET value =" . $endEpoch . " WHERE name = 'openUntil'";
 						$result = mysqli_query($conn, $sql);
 						$sql = "UPDATE settings SET value = 'TRUE' WHERE name = 'gameInProgress'";

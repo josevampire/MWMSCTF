@@ -70,9 +70,9 @@
 			$result = mysqli_query($conn, $sql);
 			$row = mysqli_fetch_assoc($result);
 			$endTime = $row['value'] - $timeDiff;
-			$endTimeString = date('g:i \o\n D M j, Y', $endTime);
+			$endTimeString = date('g:i a \o\n D M j, Y', $endTime);
 			echo '<div style="display:inline" class="">
-			<button type="button" class="btn btn-default" disabled="disabled">This game ends at: ' . $endTimeString . '</button>
+			<button type="button" class="btn btn-default" disabled="disabled">Game ends at: ' . $endTimeString . '</button>
 			</div>';
 		} else {
 			echo '<div style="display:inline" class="">
