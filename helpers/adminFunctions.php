@@ -1,5 +1,6 @@
 <?php
 	include 'mysqlLogin.php';
+
 	if (!isset($_SESSION)) {
 		session_start();
 	}
@@ -26,7 +27,23 @@
 				header("Location: ../admin.php");
 				break;
 			case 'addUser':
-				print_r($_POST);
+				$userSignUp = mysqli_real_escape_string($conn, stripslashes($_POST['username']));
+				$passSignUp = mysqli_real_escape_string($conn, stripslashes($_POST['password']));
+				$result = mysqli_query($conn, "SELECT * FROM users WHERE username = '$userSignUp'");
+				$count = mysqli_num_rows($result);
+
+				if($userSignUp == NULL || $count > 0 || $passSignUp == NULL){
+					header("Location: ../admin.php?userCreation=FALSE");
+				}
+				else{
+					if(isset($_POST['admin'])){
+						$result = mysqli_query($conn, "INSERT INTO users (username, password, admin) VALUES ('$userSignUp', '$passSignUp', 'TRUE')");
+					}
+					else{
+						$result = mysqli_query($conn, "INSERT INTO users (username, password, admin) VALUES ('$userSignUp', '$passSignUp', 'FALSE')");
+					}
+					header("Location: ../admin.php?userCreation=TRUE");
+				}
 				break;
 			default:
 				die("Not a valid action");

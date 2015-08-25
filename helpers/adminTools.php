@@ -12,6 +12,7 @@
 
   function toggleGameState() {
 		include 'mysqlLogin.php';
+    include 'adminFunctions.php';
 		$sql = "SELECT * FROM settings WHERE name = 'gameInProgress'";
 		$result = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_assoc($result);
@@ -34,23 +35,39 @@
     echo '
     <div class="panel panel-default">
 			<div class="panel-body">
-				<h4 style="display:inline-block">Add a User.</h4>
+				<h4>Add a User.</h4>
+        ';
+        if(isset($_GET['userCreation'])){
+          if($_GET['userCreation'] == 'FALSE'){
+            echo '
+               <p class = "bg-danger" style = "width: 300px; padding:10px; margin-top: 15px"><b>Error! Account could not be created.</b></p>
+            ';
+          }
+          else if($_GET['userCreation'] == 'TRUE'){
+            echo '
+                <p class = "bg-success" style = "width: 300px; padding:10px; margin-top: 15px"><b>Account successfully created.</b></p>
+            ';
+          }
+        }
+        echo'
         <form method="post" class="form" action="helpers/adminFunctions.php?action=addUser" style="width:300px;display:block">
         <div class="form-group">
           <label for="inputUsername"> Username </label>
-          <input type="text" class="form-control" name="username" placeholder="Username">
+          <input type="text" class="form-control" name="username" placeholder="Username" autocomplete ="off" />
         </div>
         <div class="form-group">
           <label for="inputPassword">Password</label>
-          <input type="password" class="form-control" name="password" placeholder="Password">
+          <input type="password" class="form-control" name="password" placeholder="Password" autocomplete ="off" />
         </div>
         <label for="checkbox1">Admin</lable>
-        <input type="checkbox" id="checkbox1" name="admin" value="true"/>
+        <input type="checkbox" name="admin" value="true"/>
         <br>
         <br>
-        <button type="submit" class="btn btn-default" style="margin:0px">Sign in</button>
-      </div>
-    </div>
-    ';
+        <button type="submit" class="btn btn-default" style="margin:0px">Sign up</button>
+        </form>
+          </div>
+        </div>
+      ';
+
   }
 ?>
