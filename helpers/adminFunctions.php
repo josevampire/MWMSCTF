@@ -41,8 +41,8 @@
 				header("Location: ../admin.php");
 				break;
 			case 'addUser':
-				$userSignUp = mysqli_real_escape_string($conn, stripslashes($_POST['username']));
-				$passSignUp = mysqli_real_escape_string($conn, stripslashes($_POST['password']));
+				$userSignUp = mysqli_real_escape_string($conn, stripslashes($_POST['newUserUsername']));
+				$passSignUp = mysqli_real_escape_string($conn, stripslashes($_POST['newUserPassword']));
 				$result = mysqli_query($conn, "SELECT * FROM users WHERE username = '$userSignUp'");
 				$count = mysqli_num_rows($result);
 
@@ -59,7 +59,58 @@
 					header("Location: ../admin.php?userCreation=TRUE");
 				}
 				break;
+			case 'resetScore':
+				$result = mysqli_query($conn, "SELECT * FROM settings WHERE name = 'resetState'");
+				$row = mysqli_fetch_assoc($result);
+				if ($_GET['attempt'] == 'init' && $row['value'] == 1) {
+					header("Location: ../admin.php");
+				} else if ($_GET['attempt'] == 'cancel' && $row['value'] == 1) {
+					$result = mysqli_query($conn, "SELECT * FROM settings WHERE name = 'resetScoreInit'");
+					$row = mysqli_fetch_assoc($result);
+					if ($row['value'] == $_SESSION['username']) {
+						$result = mysqli_query($conn, "UPDATE settings SET value = '' WHERE name = 'resetScoreInit'");
+						$result = mysqli_query($conn, "UPDATE settings SET value = '0' WHERE name = 'resetState'");
+					}
+					header("Location: ../admin.php");
+				}
+				$username = $_SESSION['username'];
+				if ($row['value'] == 0 && $_GET['attempt'] == 'init') {
+					$username = $_SESSION['username'];
+					$result = mysqli_query($conn, "UPDATE settings SET value = '$username' WHERE name = 'resetScoreInit'");
+					if ($result == 'TRUE') {
+						$result = mysqli_query($conn, "UPDATE settings SET value = '1' WHERE name = 'resetState'");
+					}
+					header("Location: ../admin.php");
+				} else if ($row['value'] == 1 && $_GET['attempt'] == 'finalize') {
+					$result = mysqli_query($conn, "SELECT * FROM settings WHERE name = 'resetScoreInit'");
+					$row = mysqli_fetch_assoc($result);
+					if ($row['value'] != $username) {
+					  $result = mysqli_query($conn, "SELECT * FROM scores");
+						if ($result != 'FALSE') {
+							while($row = mysqli_fetch_array($result)) {
+								$user = $row['user'];
+								foreach ($row as $key => $value) {
+									if (gettype($key) == "string" && is_numeric(substr($key, -3))) {
+										$result2 = mysqli_query($conn, "UPDATE scores SET $key = 'FALSE' WHERE user = '$user'");
+									}
+								}
+							}
+							$result = mysqli_query($conn, "UPDATE settings SET value = '' WHERE name = 'resetScoreInit'");
+							$result = mysqli_query($conn, "UPDATE settings SET value = '0' WHERE name = 'resetState'");
+							header('Location: ../admin.php');
+						} else {
+							echo "Query failed";
+							echo "<br>";
+							var_dump($result);
+							die();
+						}
+					}
+				} else {
+					header('Location: ../admin.php');
+				}
+				break;
 			default:
+				print_r($_GET);
 				die("Not a valid action");
 		}
 	}
