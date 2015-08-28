@@ -92,8 +92,8 @@
           </div>
         </div>
       ';
-
   }
+  
   function toggleFlashChallenges(){
     include 'mysqlLogin.php';
 		$sql = "SELECT * FROM questions WHERE category = 'flash'";
@@ -137,8 +137,6 @@
         }
       }
     }
-
-
     echo '
       <div class = "panel panel-default">
         <div class = "panel-body">
@@ -150,6 +148,8 @@
             <a href="helpers/adminFunctions.php?action=switchFlash&flashNum=500" class="btn btn-default '. $col500 .'" style="display:inline-block">Flash 500 '. $bText500 .'</a>
         </div>
       </div>
+    ';
+  }
 
 
   function resetScores() {

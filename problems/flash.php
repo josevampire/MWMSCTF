@@ -6,6 +6,7 @@
 	include '../helpers/footer.php';
 	include '../helpers/htmlHeader.php';
 	include '../helpers/header.php';
+	include '../helpers/mysqlLogin.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,10 +32,16 @@
 				?>
 			</div>
 			<div id="body">
-				<div class="alert alert-danger" role="alert">No flash challenges yet! We'll announce when one is ready.</div>
+				<?php
+					$sql = "SELECT * FROM questions WHERE category = 'flash' AND isActive = 'TRUE'";
+					$result = mysqli_query($conn, $sql);
+					$count = mysqli_num_rows($result);
+					if ($count <= 0) {
+						echo '<div class="alert alert-danger" role="alert">No flash challenges yet! We\'ll announce when one is ready.</div>';
+					}
+				?>
 					<div class ="row-fluid">
 						<?php
-								include '../helpers/mysqlLogin.php';
 								$sql = "SELECT * FROM questions WHERE category = 'flash'";
 								$result = mysqli_query($conn, $sql);
 						    if($result){

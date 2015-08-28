@@ -37,8 +37,8 @@
 						<?php
 							toggleGameState();
 							resetScores();
-							addUserField();
 							toggleFlashChallenges();
+							addUserField();
 						?>
 					</div>
 				</div>
