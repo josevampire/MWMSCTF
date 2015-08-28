@@ -59,6 +59,20 @@
 					header("Location: ../admin.php?userCreation=TRUE");
 				}
 				break;
+			case 'switchFlash':
+				$num = ($_GET['flashNum']);
+				$sql = "SELECT * FROM questions WHERE category = 'flash' AND pointValue = '$num'";
+				$result = mysqli_query($conn, $sql);
+				$row = mysqli_fetch_assoc($result);
+				if($row['isActive'] == 'FALSE'){
+							$sql = "UPDATE questions SET isActive = 'TRUE' WHERE pointValue = '$num' AND category ='flash'";
+							$result = mysqli_query($conn, $sql);
+				} else if ($row['isActive'] == 'TRUE'){
+							$sql = "UPDATE questions SET isActive = 'FALSE' WHERE pointValue = '$num' AND category ='flash'";
+							$result = mysqli_query($conn, $sql);
+				}
+				header("Location: ../admin.php");
+				break;
 			default:
 				die("Not a valid action");
 		}

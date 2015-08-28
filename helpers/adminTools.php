@@ -94,4 +94,63 @@
       ';
 
   }
+  function toggleFlashChallenges(){
+    include 'mysqlLogin.php';
+		$sql = "SELECT * FROM questions WHERE category = 'flash'";
+		$result = mysqli_query($conn, $sql);
+    if($result){
+  		while($row = mysqli_fetch_assoc($result)){
+        if($row['pointValue'] == '100' && $row['isActive'] == 'TRUE'){
+          $col100 = 'btn-success';
+          $bText100 = 'Active';
+        } else if ($row['pointValue'] == '100' && $row['isActive'] == 'FALSE'){
+          $col100 = 'btn-danger';
+          $bText100 = 'Inactive';
+        }
+        if($row['pointValue'] == '200' && $row['isActive'] == 'TRUE'){
+          $col200 = 'btn-success';
+          $bText200 = 'Active';
+        } else if ($row['pointValue'] == '200' && $row['isActive'] == 'FALSE'){
+          $col200 = 'btn-danger';
+          $bText200 = 'Inactive';
+        }
+        if($row['pointValue'] == '300' && $row['isActive'] == 'TRUE'){
+          $col300 = 'btn-success';
+          $bText300 = 'Active';
+        } else if ($row['pointValue'] == '300' && $row['isActive'] == 'FALSE'){
+          $col300 = 'btn-danger';
+          $bText300 = 'Inactive';
+        }
+        if($row['pointValue'] == '400' && $row['isActive'] == 'TRUE'){
+          $col400 = 'btn-success';
+          $bText400 = 'Active';
+        } else if ($row['pointValue'] == '400' && $row['isActive'] == 'FALSE'){
+          $col400 = 'btn-danger';
+          $bText400 = 'Inactive';
+        }
+        if($row['pointValue'] == '500' && $row['isActive'] == 'TRUE'){
+          $col500 = 'btn-success';
+          $bText500 = 'Active';
+        } else if ($row['pointValue'] == '500' && $row['isActive'] == 'FALSE'){
+          $col500 = 'btn-danger';
+          $bText500 = 'Inactive';
+        }
+      }
+    }
+
+
+    echo '
+      <div class = "panel panel-default">
+        <div class = "panel-body">
+          <h4> Toggle Flash Challenges </h4>
+            <a href="helpers/adminFunctions.php?action=switchFlash&flashNum=100" class="btn btn-default '. $col100 .'" style="display:inline-block">Flash 100 '. $bText100 .'</a>
+            <a href="helpers/adminFunctions.php?action=switchFlash&flashNum=200" class="btn btn-default '. $col200 .'" style="display:inline-block">Flash 200 '. $bText200 .'</a>
+            <a href="helpers/adminFunctions.php?action=switchFlash&flashNum=300" class="btn btn-default '. $col300 .'" style="display:inline-block">Flash 300 '. $bText300 .'</a>
+            <a href="helpers/adminFunctions.php?action=switchFlash&flashNum=400" class="btn btn-default '. $col400 .'" style="display:inline-block">Flash 400 '. $bText400 .'</a>
+            <a href="helpers/adminFunctions.php?action=switchFlash&flashNum=500" class="btn btn-default '. $col500 .'" style="display:inline-block">Flash 500 '. $bText500 .'</a>
+        </div>
+      </div>
+
+    ';
+  }
 ?>

@@ -32,6 +32,32 @@
 			</div>
 			<div id="body">
 				<div class="alert alert-danger" role="alert">No flash challenges yet! We'll announce when one is ready.</div>
+					<div class ="row-fluid">
+						<?php
+								include '../helpers/mysqlLogin.php';
+								$sql = "SELECT * FROM questions WHERE category = 'flash'";
+								$result = mysqli_query($conn, $sql);
+						    if($result){
+						  		while($row = mysqli_fetch_assoc($result)){
+										if($row['pointValue'] == '100' && $row['isActive'] == 'TRUE'){
+											problemModal(pageName, 1, 100);
+										}
+										if($row['pointValue'] == '200' && $row['isActive'] == 'TRUE'){
+											problemModal(pageName, 2, 200);
+										}
+										if($row['pointValue'] == '300' && $row['isActive'] == 'TRUE'){
+											problemModal(pageName, 3, 300);
+										}
+										if($row['pointValue'] == '400' && $row['isActive'] == 'TRUE'){
+											problemModal(pageName, 4, 400);
+										}
+										if($row['pointValue'] == '500' && $row['isActive'] == 'TRUE'){
+											problemModal(pageName, 5, 500);
+										}
+									}
+								}
+					    ?>
+					</div>
 			</div>
 			<div id = "footer">
 				<?php

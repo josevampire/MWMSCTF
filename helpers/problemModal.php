@@ -65,6 +65,8 @@
 			$titleName = 'Trivia';
 		} else if ($pageName == 'web') {
 			$titleName = 'Web';
+		} else if($pageName == 'flash'){
+			$titleName = 'Flash';
 		}
 
 		if ($_SESSION['answerState'] > 0) {
@@ -77,6 +79,7 @@
 		}
 
 		echo '<div class="col-xs-6 col-md-6">';
+		
 		echo '<button type="button" class="thumbnail" data-toggle="modal" data-target="#modal' . $problemNum . '">';
 	    echo '<img src="../images/thumbnails/'. $pageName . '/' . $pointValue . '.png" alt="' . $pageName . ' for ' . $pointValue . '">';
 	    echo '</button>
