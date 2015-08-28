@@ -36,6 +36,7 @@
 						<hr>
 						<?php
 							toggleGameState();
+							resetScores();
 							addUserField();
 							toggleFlashChallenges();
 						?>

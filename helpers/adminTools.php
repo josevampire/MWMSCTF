@@ -151,6 +151,44 @@
         </div>
       </div>
 
+
+  function resetScores() {
+    $pannelElements = '';
+    $pannelElements .= '<div id="infoGroup" class="pull-right">';
+    include 'mysqlLogin.php';
+    $sql = "SELECT * FROM settings WHERE name = 'resetState'";
+  	$result = mysqli_query($conn, $sql);
+  	$row = mysqli_fetch_assoc($result);
+    if ($row['value'] == 1) {
+      $sql = "SELECT * FROM settings WHERE name = 'resetScoreInit'";
+    	$result = mysqli_query($conn, $sql);
+    	$row = mysqli_fetch_assoc($result);
+      if ($_SESSION['username'] == $row['value']) {
+        $pannelElements .= '
+        <div class="alert alert-warning" role="alert" style="width:250px;float:left;padding:6px 15px 6px 15px;margin:0px">
+          <p class="pull-right">You have initiated a reset</p>
+        </div>
+        <a href="helpers/adminFunctions.php?action=resetScore&attempt=cancel" class="btn btn-default pull-right" style="display:inline-block">Cancel reset</a>
+        ';
+      } else {
+      $pannelElements .= '
+      <div class="alert alert-warning" role="alert" style="width:250px;float:left;padding:6px 15px 6px 15px;margin:0px">
+        <p class="pull-right">' . $row['value'] . ' has initiated a reset</p>
+      </div>
+      <a href="helpers/adminFunctions.php?action=resetScore&attempt=finalize" class="btn btn-default pull-right" style="display:inline-block">Finialize Score Reset</a>
+      ';
+      }
+    } else {
+      $pannelElements .= '<a href="helpers/adminFunctions.php?action=resetScore&attempt=init" class="btn btn-default pull-right" style="display:inline-block">Initate Score Reset</a>';
+    }
+    $pannelElements .= '</div>';
+    echo '
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4 style="display:inline-block">Reset Scores</h4>
+        ' . $pannelElements . '
+      </div>
+    </div>
     ';
   }
 ?>
