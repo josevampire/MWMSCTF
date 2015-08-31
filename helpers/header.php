@@ -57,11 +57,7 @@
 		}
 // Game state indicator
 		include $pathToRoot . 'helpers/mysqlLogin.php';
-		if (date('i')) {
-			$timeDiff = (7 * 60 * 60);
-		} else {
-			$timeDiff = (8 * 60 * 60);
-		}
+		date_default_timezone_set('America/Chicago');
 		$sql = "SELECT * FROM settings WHERE name = 'gameInProgress'";
 		$result = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_assoc($result);
@@ -69,8 +65,7 @@
 			$sql = "SELECT * FROM settings WHERE name = 'openUntil'";
 			$result = mysqli_query($conn, $sql);
 			$row = mysqli_fetch_assoc($result);
-			$endTime = $row['value'] - $timeDiff;
-			$endTimeString = date('g:i a D M j, Y', $endTime);
+			$endTimeString = date('g:i a D M j, Y', $row['value']);
 			echo '<div style="display:inline" class="">
 			<button type="button" class="btn btn-default" disabled="disabled">Game ends: ' . $endTimeString . '</button>
 			</div>';
