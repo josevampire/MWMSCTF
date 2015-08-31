@@ -24,7 +24,7 @@
 	$user = $_SESSION['username'];
 	$row = mysqli_fetch_assoc($result);
 	$key = $row["answer"];
-	if ($key == $keyAttempt) {
+	if ($key == $keyAttempt || $key == strtolower($keyAttempt)) {
 		$_SESSION["answerState"] = 20 + $problemNum;
 		$sql = "UPDATE scores SET $pageName$pointValue='TRUE' WHERE user='$user'";
 		mysqli_query($conn, $sql);
