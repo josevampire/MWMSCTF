@@ -15,12 +15,7 @@
 				    <h3 class="panel-title">Info</h3>
 				</div>
 				<div class="panel-body">
-				    <p>This page is currently only partly functional. Some questions are available and can be found by using the 
-				    links on the categories pages, however, submitting the actual answers does not yet work. (Its in the 
-				    works!) For our demo today please navigate to the questions we have written (list below) and finish as 
-				    many as you can in the time given.</p>
-
-				    <p>Questions that have been written are: Cypto for 100, Trivia for 100, Recon for 100, and Grab Bag for 200.</p>
+				    <p>Thank you for being a beta tester for this site. Click around, explore, find the flags. If you have any feedback, questions, or comments, please send them to info@mwmsctf.com.</p>
 
 				    <p>Good luck!!</p>
 				</div>
@@ -30,7 +25,9 @@
 				    <h3 class="panel-title">Rules</h3>
 				</div>
 				<div class="panel-body">
-				    Rules go here.
+				    1. Attacks against game infrastructure are strictly prohibited.
+						<br>
+						2. Please do not share flags. The game is more fun when everyone does their own work.
 				</div>
 			</div>
 			';
