@@ -17,7 +17,10 @@
 			$lastScore = -1;
 			$rowTags = "";
 	    while($row = mysqli_fetch_array($result)) {
-	        if ($row['showOnBoard'] == 'FALSE') {
+	        $nameAddition = "";
+					if ($row['showOnBoard'] == 'FALSE' && ($row['user'] == $_SESSION['username'] || $_SESSION['admin'] == 'TRUE')) {
+						$nameAddition .= "*";
+					} else if ($row['showOnBoard'] == 'FALSE') {
 						continue;
 					}
 					$rank = "";
@@ -38,7 +41,7 @@
 						<tr>
 						  	<tr " . $rowTags . ">
 							    <td style='width:40px; border-right:1px solid #ddd; text-align:center'><b>$rank</b></td>
-							    <td><b>" . $row['user'] . "</b></td>
+							    <td><b>" . $row['user'] . $nameAddition . "</b></td>
 							    <td><b>" . $row["score"] . "</b></td>
 								</tr>";
 	        } else {
@@ -46,7 +49,7 @@
 						<tr>
 						  	<tr " . $rowTags . ">
 						    <td style='width:40px; border-right:1px solid #ddd; text-align:center'><b>$rank</b></td>
-						    <td>" . $row['user'] . "</td>
+						    <td>" . $row['user'] . $nameAddition . "</td>
 						    <td>" . $row["score"] . "</td>
 						</tr>";
 	        }

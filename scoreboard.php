@@ -31,7 +31,7 @@
 			</div>
 			<div id="body">
 				<div class="panel panel-default">
-					<div id ="scoreboard" class="panel-heading">Scoreboard and Ranks</div>
+					<div class="panel-heading"><h3 style="display:inline;padding-right:10px">Scoreboard and Ranks</h3>* denotes row is not shows to general users</div>
 						<table class="table table-hover table-striped">
 							<?php
 								scoreboard();

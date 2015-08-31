@@ -38,10 +38,6 @@ button.thumbnail {
 div#body {
   overflow: auto;
 }
-div#scoreboard{
-  font-size: x-large;
-
-}
 div#footer {
   width: 900px;
   margin: auto;
