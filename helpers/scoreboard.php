@@ -17,7 +17,10 @@
 			$lastScore = -1;
 			$rowTags = "";
 	    while($row = mysqli_fetch_array($result)) {
-	        $rank = "";
+	        if ($row['showOnBoard'] == 'FALSE') {
+						continue;
+					}
+					$rank = "";
 	        if ($lastScore != $row['score']) {
 	        	$rank = "#$rowNum";
 	        	if ($rowNum == 1) {
