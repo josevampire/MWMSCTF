@@ -6,6 +6,9 @@
 	include 'helpers/footer.php';
 	include 'helpers/header.php';
   include 'helpers/userinfo.php';
+	if ($_SESSION['admin'] != 'TRUE') {
+		header("Location: index.php");
+	}
 ?>
 <!DOCTYPE html>
 <html>

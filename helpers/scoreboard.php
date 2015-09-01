@@ -41,7 +41,7 @@
 						<tr>
 						  	<tr " . $rowTags . ">
 							    <td style='width:40px; border-right:1px solid #ddd; text-align:center'><b>$rank</b></td>
-							    <td><b><a target='_BLANK' href='userinfo.php?user=" . $row['user'] . "'>" . $row['user'] . $nameAddition . "</a></b></td>
+							    <td><b>"; if ($_SESSION['admin'] == 'TRUE') {echo "<a target='_BLANK' href='userinfo.php?user=" . $row['user'] . "'>" . $row['user'] . $nameAddition . "</a>";} else {echo $row['user'] . $nameAddition;} echo "</b></td>
 							    <td><b>" . $row["score"] . "</b></td>";
 									if($_SESSION['admin'] == 'TRUE'){
 										echo '
@@ -59,7 +59,7 @@
 						<tr>
 						  	<tr " . $rowTags . ">
 						    <td style='width:40px; border-right:1px solid #ddd; text-align:center'><b>$rank</b></td>
-						    <td><a target='_BLANK' href='userinfo.php?user=" . $row['user'] . "'>" . $row['user'] . $nameAddition . "</a></td>
+						    <td>"; if ($_SESSION['admin'] == 'TRUE') {echo "<a target='_BLANK' href='userinfo.php?user=" . $row['user'] . "'>" . $row['user'] . $nameAddition . "</a>";} else {echo $row['user'] . $nameAddition;} echo "</td>
 						    <td>" . $row["score"] . "</td>";
 								if($_SESSION['admin'] == 'TRUE'){
 									echo '
