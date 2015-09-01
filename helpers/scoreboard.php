@@ -42,16 +42,36 @@
 						  	<tr " . $rowTags . ">
 							    <td style='width:40px; border-right:1px solid #ddd; text-align:center'><b>$rank</b></td>
 							    <td><b>" . $row['user'] . $nameAddition . "</b></td>
-							    <td><b>" . $row["score"] . "</b></td>
-								</tr>";
+							    <td><b>" . $row["score"] . "</b></td>";
+									if($_SESSION['admin'] == 'TRUE'){
+										echo '
+										<td>
+											<label>
+		          					<input type="checkbox"> Toggle Active
+		        					</label>
+										</td>
+										';
+									}
+									echo '
+										</tr>';
 	        } else {
 	        	echo "
 						<tr>
 						  	<tr " . $rowTags . ">
 						    <td style='width:40px; border-right:1px solid #ddd; text-align:center'><b>$rank</b></td>
 						    <td>" . $row['user'] . $nameAddition . "</td>
-						    <td>" . $row["score"] . "</td>
-						</tr>";
+						    <td>" . $row["score"] . "</td>";
+								if($_SESSION['admin'] == 'TRUE'){
+									echo '
+									<td>
+										<label>
+	          					<input type="checkbox"> Toggle Active
+	        					</label>
+									</td>
+									';
+								}
+								echo '
+									</tr>';
 	        }
 	        $rowNum++;
 	        $lastScore = $row['score'];
