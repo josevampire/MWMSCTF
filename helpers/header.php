@@ -4,7 +4,7 @@
 		echo "<h1>Millard West MSCTF 2015</h1>";
 // Sign in button
 		$pathToRoot = '';
-		if ($pageName != 'index' && $pageName != 'scoreboard' && $pageName != 'admin') {
+		if ($pageName != 'index' && $pageName != 'scoreboard' && $pageName != 'admin' && $pageName != 'userinfo') {
 			$pathToRoot = '../';
 		}
 		if ($_SESSION['loginFail']) {

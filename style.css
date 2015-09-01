@@ -63,3 +63,10 @@ img#crypto200 {
   display: block;
   margin: 20px auto;
 }
+#userinfo td{
+  text-align: center;
+}
+#userinfo th{
+  text-align: center;
+  width: 161.2px;
+}
