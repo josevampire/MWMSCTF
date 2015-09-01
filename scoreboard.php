@@ -32,7 +32,7 @@
 			<div id="body">
 				<div class="panel panel-default">
 					<div class="panel-heading"><h3 style="display:inline;padding-right:10px">Scoreboard and Ranks</h3>* denotes row is not shows to general users</div>
-						<table class="table table-hover table-striped">
+						<table class="table table-hover table-striped" id='scoreboard'>
 							<?php
 								scoreboard();
 							?>
