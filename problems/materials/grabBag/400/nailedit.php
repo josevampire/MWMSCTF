@@ -1,5 +1,5 @@
 <?php
-  $timeDiff = time() - $_GET['key'];
+  $timeDiff = abs(time() - $_GET['key']);
   if (1 < $timeDiff) {
     echo "Access denied!!
           Time diff not in tolerance.
