@@ -1,7 +1,7 @@
 <?php
  function userinfo($user){
     echo '<h3 style="margin:0px 0px 20px 0px"> Game Stats for ' . $user . '</h3>';
-    include 'helpers/mysqllogin.php';
+    include 'helpers/mysqlLogin.php';
     $result = mysqli_query($conn, "SELECT * FROM scores WHERE user = '$user'");
    	$count = mysqli_num_rows($result);
     if ($count == 1) {
