@@ -46,9 +46,8 @@
 									if($_SESSION['admin'] == 'TRUE'){
 										echo '
 										<td>
-											<label>
-		          					<input type="checkbox"> Toggle Active
-		        					</label>
+											<label for="checkboxVisible">Toggle Visible</lable>
+											<input type="checkbox" name="visible" value="true"/>
 										</td>
 										';
 									}
@@ -64,9 +63,8 @@
 								if($_SESSION['admin'] == 'TRUE'){
 									echo '
 									<td>
-										<label>
-	          					<input type="checkbox"> Toggle Active
-	        					</label>
+										<label for="checkboxVisible">Toggle Visible</lable>
+										<input type="checkbox" name="visible" value="true"/>
 									</td>
 									';
 								}
