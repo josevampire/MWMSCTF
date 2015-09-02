@@ -15,7 +15,7 @@
 				    <h3 class="panel-title">Info</h3>
 				</div>
 				<div class="panel-body">
-						<b><p class="alert alert-warning">The crypto300 question has been moved to crypto500. In the process the scores for this problem were reset. The flag is the same so to get the points back just renter it in to crypto500.</p></b>
+						<b><p class="alert alert-warning">The grabBag100 problem has been moved to grabBag300. The challenge is the same. As before the points needed to be reset for that problem to move it.</p></b>
 
 				    <p>Thank you for being a beta tester for this site. Click around, explore, find the flags. If you have any feedback, questions, or comments, please send them to info@mwmsctf.com.</p>
 
