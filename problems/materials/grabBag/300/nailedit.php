@@ -11,7 +11,7 @@
     session_start();
     $_SESSION["answerState"] = 20 + 1;
     $user = $_SESSION['username'];
-    $sql = "UPDATE scores SET grabBag100='TRUE' WHERE user='$user'";
+    $sql = "UPDATE scores SET grabBag300='TRUE' WHERE user='$user'";
     mysqli_query($conn, $sql);
     echo '<script>setTimeout(function(){
               var curTime = new Date().getTime() / 1000;

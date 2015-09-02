@@ -74,26 +74,28 @@
           }
         }
         echo'
-        <form method="post" class="form" action="helpers/adminFunctions.php?action=addUser" style="width:300px;display:block">
-        <div class="form-group">
-          <label for="inputUsername"> Username </label>
-          <input type="text" class="form-control" name="username" placeholder="Username" autocomplete ="off" />
-        </div>
-        <div class="form-group">
-          <label for="inputPassword">Password</label>
-          <input type="password" class="form-control" name="password" placeholder="Password" autocomplete ="off" />
-        </div>
-        <label for="checkbox1">Admin</lable>
-        <input type="checkbox" name="admin" value="true"/>
-        <br>
-        <br>
-        <button type="submit" class="btn btn-default" style="margin:0px">Sign up</button>
+        <form method="post" class="form" action="helpers/adminFunctions.php?action=addUser" style="width:300px;display:block" autocomplete="off">
+          <input style="display:none" type="text" name="fakeusernameremembered"/>
+          <input style="display:none" type="password" name="fakepasswordremembered"/>
+          <div class="form-group">
+            <label for="inputUsername"> Username </label>
+            <input type="text" class="form-control" name="username" placeholder="Username" autocomplete ="off" />
+          </div>
+          <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password" autocomplete ="off" />
+          </div>
+          <label for="checkbox1">Admin</lable>
+          <input type="checkbox" name="admin" value="true"/>
+          <br>
+          <br>
+          <button type="submit" class="btn btn-default" style="margin:0px">Sign up</button>
         </form>
           </div>
         </div>
       ';
   }
-  
+
   function toggleFlashChallenges(){
     include 'mysqlLogin.php';
 		$sql = "SELECT * FROM questions WHERE category = 'flash'";
