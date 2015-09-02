@@ -5,6 +5,7 @@
 			$pathToRoot = '../';
 		}
 		echo '
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 			<meta charset="ISO-8859-1">
 			<link rel="stylesheet" type="text/css" href="' . $pathToRoot .'style.css">
 			<link href="' . $pathToRoot . 'bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
