@@ -47,29 +47,39 @@
    }
 
    if ($one == "TRUE") {
+     $one ="Complete";
      $oneTag = 'class="success"';
    } else {
      $oneTag = 'class="danger"';
+     $one = "Incomplete";
    }
    if ($two == "TRUE") {
      $twoTag = 'class="success"';
+     $two = "Complete";
    } else {
      $twoTag = 'class="danger"';
+     $two = "Incomplete";
    }
    if ($three == "TRUE") {
      $threeTag = 'class="success"';
+     $three = "Complete";
    } else {
      $threeTag = 'class="danger"';
+     $three = "Incomplete";
    }
    if ($four == "TRUE") {
      $fourTag = 'class="success"';
+     $four = "Complete";
    } else {
      $fourTag = 'class="danger"';
+     $four = "Incomplete";
    }
    if ($five == "TRUE") {
      $fiveTag = 'class="success"';
+     $five = "Complete";
    } else {
      $fiveTag = 'class="danger"';
+     $five = "Incomplete";
    }
    echo '
    <div class="panel panel-default">
