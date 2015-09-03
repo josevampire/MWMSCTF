@@ -6,6 +6,10 @@
 		header('Location: ../index.php');
 	}
 
+	if (!isset($_POST['keyAttempt'])) {
+		$_POST['keyAttempt'] = 'youreACheater';
+	}
+
 	$keyAttempt = mysqli_real_escape_string($conn, stripslashes($_POST["keyAttempt"]));
 	$pageName = $_GET["pageName"];
 	$problemNum = $_GET["problemNum"];

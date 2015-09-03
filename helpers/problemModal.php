@@ -79,7 +79,7 @@
 		}
 
 		echo '<div class="col-xs-6 col-md-6">';
-		
+
 		echo '<button type="button" class="thumbnail" data-toggle="modal" data-target="#modal' . $problemNum . '">';
 	    echo '<img src="../images/thumbnails/'. $pageName . '/' . $pointValue . '.png" alt="' . $pageName . ' for ' . $pointValue . '">';
 	    echo '</button>
@@ -109,7 +109,7 @@
 				      </div>
 				      <div class="modal-footer">
 				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				        <button type="submit" class="btn btn-primary">Submit</button>
+				        <button type="submit" class="btn btn-primary"' . $disabledForm . '>Submit</button>
 				      </div>
 			      </form>
 			    </div>
