@@ -147,14 +147,16 @@
          continue;
        }
        if ($row[$probCode] == "TRUE") {
+         $display = 'Complete';
          $style = 'class="success"';
        } else {
+         $display = 'Incomplete';
          $style = 'class="danger"';
        }
        $toReturn .= '
           <tr>
             <td>' . $row['user'] . '</td>
-            <td id="questionState" ' . $style . '>' . $row[$probCode] . '</td>
+            <td id="questionState" ' . $style . '>' . $display . '</td>
           </tr>
        ';
      }
