@@ -68,32 +68,32 @@
          </tr>
          <tr>
            <td style="width:100px">100</td>
-           <td style="padding:0px"><a '; if ($admin) { echo 'href="#collapse' . $name . "100" . '" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse' . $name . "100" . '"'; } echo ' style="display:block;padding:8px">' . printProgressBar($one, $totalUsers) . '</a>
-           ' . adminDetails($name . "100") . '
+           <td style="padding:0px"><a '; if ($admin) { echo 'href="#collapse' . $name . "100" . '" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse' . $name . "100" . '"'; } echo ' style="display:block;padding:8px">' . printProgressBar($one, $totalUsers); if ($admin) { echo '</a>'; }
+           echo adminDetails($name . "100") . '
            </td>
          </tr>
          <tr>
            <td>200</td>
-           <td style="padding:0px"><a '; if ($admin) { echo 'href="#collapse' . $name . "200" . '" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse' . $name . "200" . '"'; } echo ' style="display:block;padding:8px">' . printProgressBar($two, $totalUsers) . '</a>
-           ' . adminDetails($name . "200") . '
+           <td style="padding:0px"><a '; if ($admin) { echo 'href="#collapse' . $name . "200" . '" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse' . $name . "200" . '"'; } echo ' style="display:block;padding:8px">' . printProgressBar($two, $totalUsers); if ($admin) { echo '</a>'; }
+           echo adminDetails($name . "200") . '
            </td>
          </tr>
          <tr>
            <td>300</td>
-           <td style="padding:0px"><a '; if ($admin) { echo 'href="#collapse' . $name . "300" . '" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse' . $name . "300" . '"'; } echo ' style="display:block;padding:8px">' . printProgressBar($three, $totalUsers) . '</a>
-           ' . adminDetails($name . "300") . '
+           <td style="padding:0px"><a '; if ($admin) { echo 'href="#collapse' . $name . "300" . '" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse' . $name . "300" . '"'; } echo ' style="display:block;padding:8px">' . printProgressBar($three, $totalUsers); if ($admin) { echo '</a>'; }
+           echo adminDetails($name . "300") . '
            </td>
          </tr>
          <tr>
            <td>400</td>
-           <td style="padding:0px"><a '; if ($admin) { echo 'href="#collapse' . $name . "400" . '" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse' . $name . "400" . '"'; } echo ' style="display:block;padding:8px">' . printProgressBar($four, $totalUsers) . '</a>
-           ' . adminDetails($name . "400") . '
+           <td style="padding:0px"><a '; if ($admin) { echo 'href="#collapse' . $name . "400" . '" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse' . $name . "400" . '"'; } echo ' style="display:block;padding:8px">' . printProgressBar($four, $totalUsers); if ($admin) { echo '</a>'; }
+           echo adminDetails($name . "400") . '
            </td>
          </tr>
          <tr>
            <td>500</td>
-           <td style="padding:0px"><a '; if ($admin) { echo 'href="#collapse' . $name . "500" . '" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse' . $name . "500" . '"'; } echo ' style="display:block;padding:8px">' . printProgressBar($five, $totalUsers) . '</a>
-           ' . adminDetails($name . "500") . '
+           <td style="padding:0px"><a '; if ($admin) { echo 'href="#collapse' . $name . "500" . '" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse' . $name . "500" . '"'; } echo ' style="display:block;padding:8px">' . printProgressBar($five, $totalUsers); if ($admin) { echo '</a>'; }
+           echo adminDetails($name . "500") . '
            </td>
          </tr>
        </table>
@@ -160,12 +160,12 @@
           </tr>
        ';
      }
+     $toReturn .= '
+        </table>
+      </div>
+     </div>
+     ';
+     return $toReturn;
    }
-   $toReturn .= '
-      </table>
-    </div>
-   </div>
-   ';
-   return $toReturn;
  }
 ?>
