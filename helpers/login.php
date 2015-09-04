@@ -17,6 +17,7 @@
 		if ($row['admin'] == "TRUE") {
 			$_SESSION["admin"] = TRUE;
 		}
+		$result = mysqli_query($conn, "UPDATE users SET lastSeen = '" . time() . "' WHERE username = '" . $row['username'] . "'");
 		if ($row['firstLogon'] == "TRUE") {
 			$result = mysqli_query($conn, "INSERT INTO scores (user) VALUES ('" . $_SESSION["username"] . "')");
 			if ($result) {

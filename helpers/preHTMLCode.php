@@ -18,6 +18,9 @@
 
 	include 'mysqlLogin.php';
 
+	$username = $_SESSION['username'];
+	$result = mysqli_query($conn, "UPDATE users SET lastSeen = '" . time() . "' WHERE username = '" . $username . "'");
+
 	$sql = "SELECT * FROM settings WHERE name = 'openUntil'";
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
