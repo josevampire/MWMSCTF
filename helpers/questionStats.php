@@ -49,6 +49,11 @@
    } else if($name == 'flash'){
      $titleName = 'Flash';
    }
+   if ($_SESSION['admin']) {
+     $admin = true;
+   } else {
+     $admin = false;
+   }
 
    echo '
    <div class="panel panel-default">
@@ -56,26 +61,40 @@
        <h3 class="panel-title">' . $titleName . '</h3>
      </div>
      <div class="panel-body">
-       <table class="table table-bordered" id="userinfo">
+       <table class="table" id="questionStats">
+         <tr>
+            <th style="width:100px">Point Value</th>
+            <th>Users Completed</th>
+         </tr>
          <tr>
            <td style="width:100px">100</td>
-           <td>' . printProgressBar($one, $totalUsers) . '</td>
+           <td style="padding:0px"><a '; if ($admin) { echo 'href="#collapse' . $name . "100" . '" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse' . $name . "100" . '"'; } echo ' style="display:block;padding:8px">' . printProgressBar($one, $totalUsers) . '</a>
+           ' . adminDetails($name . "100") . '
+           </td>
          </tr>
          <tr>
            <td>200</td>
-           <td>' . printProgressBar($two, $totalUsers) . '</td>
+           <td style="padding:0px"><a '; if ($admin) { echo 'href="#collapse' . $name . "200" . '" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse' . $name . "200" . '"'; } echo ' style="display:block;padding:8px">' . printProgressBar($two, $totalUsers) . '</a>
+           ' . adminDetails($name . "200") . '
+           </td>
          </tr>
          <tr>
            <td>300</td>
-           <td>' . printProgressBar($three, $totalUsers) . '</td>
+           <td style="padding:0px"><a '; if ($admin) { echo 'href="#collapse' . $name . "300" . '" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse' . $name . "300" . '"'; } echo ' style="display:block;padding:8px">' . printProgressBar($three, $totalUsers) . '</a>
+           ' . adminDetails($name . "300") . '
+           </td>
          </tr>
          <tr>
            <td>400</td>
-           <td>' . printProgressBar($four, $totalUsers) . '</td>
+           <td style="padding:0px"><a '; if ($admin) { echo 'href="#collapse' . $name . "400" . '" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse' . $name . "400" . '"'; } echo ' style="display:block;padding:8px">' . printProgressBar($four, $totalUsers) . '</a>
+           ' . adminDetails($name . "400") . '
+           </td>
          </tr>
          <tr>
            <td>500</td>
-           <td>' . printProgressBar($five, $totalUsers) . '</td>
+           <td style="padding:0px"><a '; if ($admin) { echo 'href="#collapse' . $name . "500" . '" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse' . $name . "500" . '"'; } echo ' style="display:block;padding:8px">' . printProgressBar($five, $totalUsers) . '</a>
+           ' . adminDetails($name . "500") . '
+           </td>
          </tr>
        </table>
      </div>
@@ -107,5 +126,44 @@
       </div>
     </div>
    ';
+ }
+
+ function adminDetails($probCode){
+   if ($_SESSION['admin'] == 'TRUE') {
+     include 'mysqlLogin.php';
+     $sql = "SELECT $probCode, user, showOnBoard FROM scores";
+     $result = mysqli_query($conn, $sql);
+     $toReturn = '
+     <div id="collapse' .$probCode . '" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading' . $probCode . '">
+      <div class="panel-body">
+      <table class="table" id="adminDetails" style="width:250px">
+        <tr>
+           <th style="width:100px">User</th>
+           <th>Question State</th>
+        </tr>
+    ';
+     while ($row = mysqli_fetch_array($result)) {
+       if ($row['showOnBoard'] == 'FALSE') {
+         continue;
+       }
+       if ($row[$probCode] == "TRUE") {
+         $style = 'class="success"';
+       } else {
+         $style = 'class="danger"';
+       }
+       $toReturn .= '
+          <tr>
+            <td>' . $row['user'] . '</td>
+            <td id="questionState" ' . $style . '>' . $row[$probCode] . '</td>
+          </tr>
+       ';
+     }
+   }
+   $toReturn .= '
+      </table>
+    </div>
+   </div>
+   ';
+   return $toReturn;
  }
 ?>

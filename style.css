@@ -74,3 +74,12 @@ img#crypto200 {
   text-decoration: none;
   color: inherit;
 }
+#questionStats tr {
+  text-align: center;
+}
+#questionStats th {
+  text-align: center;
+}
+#adminDetails td {
+  text-align: center;
+}
