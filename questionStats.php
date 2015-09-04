@@ -1,5 +1,5 @@
 <?php
-	define('pageName', 'userinfo');
+	define('pageName', 'questionStats');
 	include 'helpers/preHTMLCode.php';
 	include 'helpers/htmlHeader.php';
 	include 'helpers/nav.php';

@@ -1,6 +1,6 @@
 <?php
  function questionStats(){
-   $stats = [];
+   $stats = array();
    $users = 0;
    include 'mysqlLogin.php';
    $sql = "SELECT * FROM scores";

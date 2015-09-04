@@ -28,7 +28,7 @@
 	}
 
 	$pathBack = '';
-	if ($referingPage == 'index' || $referingPage == 'scoreboard') {
+	if ($referingPage == 'index' || $referingPage == 'scoreboard' || $referingPage == 'questionStats' || $referingPage == 'userInfo') {
 		$pathBack = '../' . $referingPage . '.php';
 	} else {
 		$pathBack = '../problems/' . $referingPage . '.php';
