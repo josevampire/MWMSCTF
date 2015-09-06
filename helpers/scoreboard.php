@@ -9,7 +9,7 @@
 			    <th>Team Name</th>
 			    <th>Points</th>';
 					if ($_SESSION['admin'] == 'TRUE') {
-						echo "<th>Last Seen<th>";
+						echo "<th>Last Seen</th>";
 					}
 		  	echo '</tr>';
 
