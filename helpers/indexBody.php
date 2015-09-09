@@ -1,5 +1,11 @@
 <?php
-	function indexBody() {
+	function indexBody($pageName) {
+
+		$pathToRoot = '';
+		if ($pageName != 'index' && $pageName != 'scoreboard' && $pageName != 'admin' && $pageName != 'userinfo' && $pageName != 'questionStats') {
+			$pathToRoot = '../';
+		}
+
 		if (!$_SESSION['gameInProgress'] && !$_SESSION['admin']) {
 			echo '<center><h3>Welcome to the first annual MSCTF!!</h3></center>
 			<div class="panel panel-default">
@@ -29,9 +35,47 @@
 				<div class="panel-body">
 				    1. Attacks against game infrastructure are strictly prohibited.
 						<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. Brute forcing will result in a 5 minute lock out.
+						<br>
 						2. Please do not share flags. The game is more fun when everyone does their own work.
 				</div>
 			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+				    <h3 class="panel-title">Beta Users</h3>
+				</div>
+				<div class="panel-body">
+				  	<button type="button" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#modalBeta" style ="margin: 0px auto; width: 400px"> Beta Sign In </button>
+						<div class="modal fade" id="modalBeta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						      <form method="post" action="' . $pathToRoot . 'helpers/login.php?pageName=' . $pageName . '">
+							      <div class="modal-header">
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							        <h4 class="modal-title" id="myModalLabel">Beta Sign In</h4>
+							      </div>
+							      <div class="modal-body">';
+							      	if ($_SESSION['loginFail']) {
+								      	echo '<div class="alert alert-danger" role="alert">The pin is incorrect. Please try again.</div>';
+							      		$_SESSION['loginFail'] = FALSE;
+							      	}
+							      	echo '
+							        	<p> Enter the pin for beta question access. </p>
+									  		<div class="form-group">
+									    		<label for="inputPin"> Beta Pin </label>
+									    		<input type="text" class="form-control" name="betaPin" placeholder="Pin">
+											  </div>
+											</div>
+							      	<div class="modal-footer">
+							        	<button type="submit" class="btn">Enter Beta</button>
+							        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							      	</div>
+						      	</form>
+						    	</div>
+					      </div>
+							</div>
+						</div>
+					</div>
 			';
 		}
 	}
