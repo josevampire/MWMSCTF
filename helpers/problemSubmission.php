@@ -68,7 +68,9 @@
 	$key = $row["answer"];
 	if ($key == $keyAttempt || $key == strtolower($keyAttempt)) {
 		$_SESSION["answerState"] = 20 + $problemNum;
-		mysqli_query($conn, "UPDATE scores SET $pageName$pointValue='TRUE' WHERE user='$user'");
+		if (!$_SESSION['beta']) {
+			mysqli_query($conn, "UPDATE scores SET $pageName$pointValue='TRUE' WHERE user='$user'");
+		}
 	} else {
 		$_SESSION["answerState"] = 10 + $problemNum;
 	}

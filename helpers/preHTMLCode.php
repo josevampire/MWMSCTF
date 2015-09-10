@@ -44,6 +44,7 @@
 	$row = mysqli_fetch_assoc($result);
 	if ($row['value'] == 'TRUE') {
 		$_SESSION["gameInProgress"] = TRUE;
+		$_SESSION['beta'] = FALSE;
 	} else {
 		$_SESSION["gameInProgress"] = FALSE;
 	}

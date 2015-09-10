@@ -12,7 +12,9 @@
 	if ($count == 1) {
 		$row = mysqli_fetch_assoc($result);
 		$_SESSION["signedIn"] = TRUE;
-    $_SESSION["username"] = 'Guest';
+    if ($_SESSION['username'] == '') {
+			$_SESSION["username"] = 'Guest';
+		}
 		$_SESSION["beta"] = TRUE;
 	} else {
 		$_SESSION["betaFail"] = TRUE;
