@@ -42,7 +42,7 @@
 
 		$result = mysqli_query($conn, "SELECT lockOutUntil FROM scores WHERE user = '$user'");
 		$row = mysqli_fetch_assoc($result);
-		if ($row['lockOutUntil'] != '0') {
+		if ($row['lockOutUntil'] != '0' && $_SESSION['username'] != 'Guest') {
 			$completedText = ' has-success';
 			$disabledForm = 'id="disabledInput" placeholder="You are locked out of the system." disabled';
 		}
@@ -100,7 +100,10 @@
 							$result = mysqli_query($conn, "SELECT lockOutUntil FROM scores WHERE user = '$user'");
 							$row = mysqli_fetch_assoc($result);
 							$lockOutTime = $row['lockOutUntil'];
-				      if (($_SESSION['answerState'] > 0 && $_SESSION['answerState'] % 10 == $problemNum) || $lockOutTime != "0" && ($_SESSION['signedIn'] && $_SESSION['username'] != 'Guest')) {
+							if ($lockOutTime == "") {
+								$lockOutTime = "0";
+							}
+				      if (($_SESSION['answerState'] > 0 && $_SESSION['answerState'] % 10 == $problemNum) || ($lockOutTime != "0" && $_SESSION['username'] != 'Guest')) {
 								if ($_SESSION['answerState'] > 30 || $lockOutTime != "0") {
 									$lockOutString = date('g:i:s', $lockOutTime);
 									echo '<div class="alert alert-danger" role="alert">You have been locked out until ' . $lockOutString . '.</div>';

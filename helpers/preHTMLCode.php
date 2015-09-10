@@ -30,7 +30,7 @@
 	$result = mysqli_query($conn, "SELECT lockOutUntil FROM scores WHERE user = '$username'");
 	$row = mysqli_fetch_assoc($result);
 	if ($row['lockOutUntil'] < time()) {
-		$result = mysqli_query($conn, "UPDATE scores SET lockOutUntil = '0' WHERE user = '" . $username . "'");
+		$result = mysqli_query($conn, "UPDATE scores SET lockOutUntil = '' WHERE user = '" . $username . "'");
 	}
 
 	$result = mysqli_query($conn, "SELECT * FROM settings WHERE name = 'openUntil'");

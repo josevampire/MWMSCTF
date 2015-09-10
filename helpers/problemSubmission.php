@@ -14,7 +14,7 @@
 	}
 
 
-	if (!$_SESSION['gameInProgress'] && !$_SESSION['admin']) {
+	if (!$_SESSION['gameInProgress'] && !$_SESSION['admin'] && !$_SESSION['beta']) {
 		header('Location: ../index.php');
 	}
 
@@ -32,7 +32,7 @@
 
 	$result = mysqli_query($conn, "SELECT attempts FROM scores WHERE user = '$user'");
 	$row = mysqli_fetch_assoc($result);
-	if ($row['attempts'] > 5) {
+	if ($row['attempts'] >= 5) {
 		$lockOutTime = time() + (5 * 60);
 		$result = mysqli_query($conn, "UPDATE scores SET lockOutUntil = '$lockOutTime' WHERE user = '$user'");
 		$result = mysqli_query($conn, "UPDATE scores SET attempts = '0' WHERE user = '$user'");
@@ -43,11 +43,13 @@
 
 	$result = mysqli_query($conn, "SELECT lockOutUntil FROM scores WHERE user = '$user'");
 	$row = mysqli_fetch_assoc($result);
-	if ($row['lockOutUntil'] < time()) {
-		$result = mysqli_query($conn, "UPDATE scores SET lockOutUntil = '' WHERE user = '$user'");
-	} else if ($row['lockOutUntil'] != "") {
-		$_SESSION["answerState"] = 30 + $problemNum;
-		header('Location:' . $pathBack . '?lockOut=TRUE');
+	if ($_SESSION['username'] != 'Guest') {
+		if ($row['lockOutUntil'] < time()) {
+			$result = mysqli_query($conn, "UPDATE scores SET lockOutUntil = '' WHERE user = '$user'");
+		} else if ($row['lockOutUntil'] != "") {
+			$_SESSION["answerState"] = 30 + $problemNum;
+			header('Location:' . $pathBack);
+		}
 	}
 
 	$keyAttempt = mysqli_real_escape_string($conn, stripslashes($_POST["keyAttempt"]));
