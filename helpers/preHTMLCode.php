@@ -15,6 +15,12 @@
 	if (!isset($_SESSION['admin'])) {
 		$_SESSION['admin'] = FALSE;
 	}
+	if(!isset($_SESSION['beta'])){
+		$_SESSION['beta'] = FALSE;
+	}
+	if(!isset($_SESSION['betaFail'])){
+		$_SESSION['betaFail'] = FALSE;
+	}
 
 	include 'mysqlLogin.php';
 

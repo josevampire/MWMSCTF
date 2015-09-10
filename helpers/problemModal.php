@@ -1,5 +1,5 @@
 <?php
-	if (!$_SESSION['gameInProgress'] && !$_SESSION['admin']) {
+	if (!$_SESSION['gameInProgress'] && !$_SESSION['admin'] && !$_SESSION['beta']) {
 		header("Location: ../index.php");
 	}
 
