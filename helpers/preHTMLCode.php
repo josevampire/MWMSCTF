@@ -21,18 +21,20 @@
 	$username = $_SESSION['username'];
 	$result = mysqli_query($conn, "UPDATE users SET lastSeen = '" . time() . "' WHERE username = '" . $username . "'");
 
-	$sql = "SELECT * FROM settings WHERE name = 'openUntil'";
-	$result = mysqli_query($conn, $sql);
+	$result = mysqli_query($conn, "SELECT lockOutUntil FROM scores WHERE user = '$username'");
 	$row = mysqli_fetch_assoc($result);
-	if ($row['value'] <= time()) {
-		$sql = "UPDATE settings SET value = 'FALSE' WHERE name = 'gameInProgress'";
-		$result = mysqli_query($conn, $sql);
-		$sql = "UPDATE settings SET value = '' WHERE name = 'openUntil'";
-		$result = mysqli_query($conn, $sql);
+	if ($row['lockOutUntil'] < time()) {
+		$result = mysqli_query($conn, "UPDATE scores SET lockOutUntil = '0' WHERE user = '" . $username . "'");
 	}
 
-	$sql = "SELECT * FROM settings WHERE name = 'gameInProgress'";
-	$result = mysqli_query($conn, $sql);
+	$result = mysqli_query($conn, "SELECT * FROM settings WHERE name = 'openUntil'");
+	$row = mysqli_fetch_assoc($result);
+	if ($row['value'] <= time()) {
+		$result = mysqli_query($conn, "UPDATE settings SET value = 'FALSE' WHERE name = 'gameInProgress'");
+		$result = mysqli_query($conn, "UPDATE settings SET value = '' WHERE name = 'openUntil'");
+	}
+
+	$result = mysqli_query($conn, "SELECT * FROM settings WHERE name = 'gameInProgress'");
 	$row = mysqli_fetch_assoc($result);
 	if ($row['value'] == 'TRUE') {
 		$_SESSION["gameInProgress"] = TRUE;

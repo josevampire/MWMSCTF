@@ -9,11 +9,11 @@
 		if ($pageName != 'index' && pageName != 'scoreboard') {
 			$pathToRoot = '../';
 		}
+		$user = $_SESSION['username'];
 
 		include 'mysqlLogin.php';
 
-		$sql = "SELECT * FROM questions WHERE category = '$pageName' AND pointValue = '$pointValue'";
-		$result = mysqli_query($conn, $sql);
+		$result = mysqli_query($conn, "SELECT * FROM questions WHERE category = '$pageName' AND pointValue = '$pointValue'");
 
 		$count = mysqli_num_rows($result);
 		if ($count > 1) {
@@ -40,9 +40,14 @@
 			$disabledForm = 'id="disabledInput" placeholder="You must be signed in to answer questions." disabled';
 		}
 
-		$user = $_SESSION['username'];
-		$sql = "SELECT * FROM scores WHERE user = '$user'";
-		$result = mysqli_query($conn, $sql);
+		$result = mysqli_query($conn, "SELECT lockOutUntil FROM scores WHERE user = '$user'");
+		$row = mysqli_fetch_assoc($result);
+		if ($row['lockOutUntil'] != '0') {
+			$completedText = ' has-success';
+			$disabledForm = 'id="disabledInput" placeholder="You are locked out of the system." disabled';
+		}
+
+		$result = mysqli_query($conn, "SELECT * FROM scores WHERE user = '$user'");
 		$row = mysqli_fetch_assoc($result);
 		$columnName = '$pageName $pointValue';
 		$completedText = '';
@@ -92,13 +97,19 @@
 			      </div>
 			      <form method="post" action="' . $pathToRoot . 'helpers/problemSubmission.php?pageName=' . $pageName . '&problemNum=' . $problemNum . '&pointValue=' . $pointValue . '">
 				      <div class="modal-body' . $completedText . '">';
-				      if ($_SESSION['answerState'] > 0 && $_SESSION['answerState'] % 10 == $problemNum) {
-				      	if ($_SESSION['answerState'] > 20) {
+							$result = mysqli_query($conn, "SELECT lockOutUntil FROM scores WHERE user = '$user'");
+							$row = mysqli_fetch_assoc($result);
+							$lockOutTime = $row['lockOutUntil'];
+				      if (($_SESSION['answerState'] > 0 && $_SESSION['answerState'] % 10 == $problemNum) || $lockOutTime != "0" && $_SESSION['signedIn']) {
+								if ($_SESSION['answerState'] > 30 || $lockOutTime != "0") {
+									$lockOutString = date('g:i:s', $lockOutTime);
+									echo '<div class="alert alert-danger" role="alert">You have been locked out until ' . $lockOutString . '.</div>';
+								}	else if ($_SESSION['answerState'] > 20) {
 					      	echo '<div class="alert alert-success" role="alert">Correct!</div>';
-					    } else {
-					    	echo '<div class="alert alert-danger" role="alert">Nope, keep looking.</div>';
-					    }
-					    $_SESSION['answerState'] = 0;
+						    } else {
+						    	echo '<div class="alert alert-danger" role="alert">Nope, keep looking.</div>';
+						    }
+						    $_SESSION['answerState'] = 0;
 				      }
 				      echo '
 				        <p>'. $questionText .'</p>

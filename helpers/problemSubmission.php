@@ -1,6 +1,18 @@
 <?php
 	session_start();
 	include 'mysqlLogin.php';
+	$user = $_SESSION['username'];
+	$pathBack = '';
+	$keyAttempt = mysqli_real_escape_string($conn, stripslashes($_POST["keyAttempt"]));
+	$pageName = $_GET["pageName"];
+	$problemNum = $_GET["problemNum"];
+	$pointValue = $_GET["pointValue"];
+	if ($pageName == 'index' || $pageName == 'scoreboard') {
+		$pathBack = '../' . $pageName . '.php';
+	} else {
+		$pathBack = '../problems/' . $pageName . '.php';
+	}
+
 
 	if (!$_SESSION['gameInProgress'] && !$_SESSION['admin']) {
 		header('Location: ../index.php');
@@ -10,13 +22,40 @@
 		$_POST['keyAttempt'] = 'youreACheater';
 	}
 
+	$result = mysqli_query($conn, "SELECT value FROM settings WHERE name = 'bruteForceTimeRef'");
+	$row = mysqli_fetch_assoc($result);
+	if ($row['value'] == "" || time() - $row['value'] > 15) {
+		$time = time();
+		$result = mysqli_query($conn, "UPDATE settings SET value = '$time' WHERE name = 'bruteForceTimeRef'");
+		$result = mysqli_query($conn, "UPDATE scores SET attempts = 0");
+	}
+
+	$result = mysqli_query($conn, "SELECT attempts FROM scores WHERE user = '$user'");
+	$row = mysqli_fetch_assoc($result);
+	if ($row['attempts'] > 5) {
+		$lockOutTime = time() + (5 * 60);
+		$result = mysqli_query($conn, "UPDATE scores SET lockOutUntil = '$lockOutTime' WHERE user = '$user'");
+		$result = mysqli_query($conn, "UPDATE scores SET attempts = '0' WHERE user = '$user'");
+	} else {
+		$newAttempts = $row['attempts'] + 1;
+		$result = mysqli_query($conn, "UPDATE scores SET attempts = $newAttempts WHERE user = '$user'");
+	}
+
+	$result = mysqli_query($conn, "SELECT lockOutUntil FROM scores WHERE user = '$user'");
+	$row = mysqli_fetch_assoc($result);
+	if ($row['lockOutUntil'] < time()) {
+		$result = mysqli_query($conn, "UPDATE scores SET lockOutUntil = '' WHERE user = '$user'");
+	} else if ($row['lockOutUntil'] != "") {
+		$_SESSION["answerState"] = 30 + $problemNum;
+		header('Location:' . $pathBack . '?lockOut=TRUE');
+	}
+
 	$keyAttempt = mysqli_real_escape_string($conn, stripslashes($_POST["keyAttempt"]));
 	$pageName = $_GET["pageName"];
 	$problemNum = $_GET["problemNum"];
 	$pointValue = $_GET["pointValue"];
 
-	$sql = "SELECT * FROM questions WHERE category = '$pageName' AND pointValue = '$pointValue'";
-	$result = mysqli_query($conn, $sql);
+	$result = mysqli_query($conn, "SELECT * FROM questions WHERE category = '$pageName' AND pointValue = '$pointValue'");
 
 	$count = mysqli_num_rows($result);
 	if ($count > 1) {
@@ -25,22 +64,13 @@
 		die("No questions selected!");
 	}
 
-	$user = $_SESSION['username'];
 	$row = mysqli_fetch_assoc($result);
 	$key = $row["answer"];
 	if ($key == $keyAttempt || $key == strtolower($keyAttempt)) {
 		$_SESSION["answerState"] = 20 + $problemNum;
-		$sql = "UPDATE scores SET $pageName$pointValue='TRUE' WHERE user='$user'";
-		mysqli_query($conn, $sql);
+		mysqli_query($conn, "UPDATE scores SET $pageName$pointValue='TRUE' WHERE user='$user'");
 	} else {
 		$_SESSION["answerState"] = 10 + $problemNum;
-	}
-
-	$pathBack = '';
-	if ($pageName == 'index' || $pageName == 'scoreboard') {
-		$pathBack = '../' . $pageName . '.php';
-	} else {
-		$pathBack = '../problems/' . $pageName . '.php';
 	}
 
 	header('Location:' . $pathBack);
