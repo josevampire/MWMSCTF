@@ -100,7 +100,7 @@
 							$result = mysqli_query($conn, "SELECT lockOutUntil FROM scores WHERE user = '$user'");
 							$row = mysqli_fetch_assoc($result);
 							$lockOutTime = $row['lockOutUntil'];
-				      if (($_SESSION['answerState'] > 0 && $_SESSION['answerState'] % 10 == $problemNum) || $lockOutTime != "0" && $_SESSION['signedIn']) {
+				      if (($_SESSION['answerState'] > 0 && $_SESSION['answerState'] % 10 == $problemNum) || $lockOutTime != "0" && ($_SESSION['signedIn'] && $_SESSION['username'] != 'Guest')) {
 								if ($_SESSION['answerState'] > 30 || $lockOutTime != "0") {
 									$lockOutString = date('g:i:s', $lockOutTime);
 									echo '<div class="alert alert-danger" role="alert">You have been locked out until ' . $lockOutString . '.</div>';
