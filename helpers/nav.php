@@ -7,7 +7,7 @@
 		$disabledText = '';
 		$href = TRUE;
 
-		if (!$_SESSION['gameInProgress'] && !$_SESSION['admin']) {
+		if (!$_SESSION['gameInProgress'] && !$_SESSION['admin'] && !$_SESSION['beta']) {
 			$disabledText = 'disabled';
 			$href = FALSE;
 		}
