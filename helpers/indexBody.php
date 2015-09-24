@@ -7,7 +7,7 @@
 		}
 
 		if (!$_SESSION['gameInProgress'] && !$_SESSION['admin'] && !$_SESSION['beta']) {
-			echo '<center><h3>Welcome to the first annual MSCTF!!</h3></center>
+			echo '<center><h3>Welcome MW Comp Sci Students!</h3></center>
 			<div class="panel panel-default">
 				<div class="panel-body">
 				    <p>The game is currently closed. To view questions please wait until the game opens or login with an administrator account.</p>
