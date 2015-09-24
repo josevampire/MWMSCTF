@@ -1,7 +1,7 @@
 <?php
 	function signinButton($pageName) {
 // Header text
-		echo "<h1>Millard West MSCTF 2015</h1>";
+		echo "<h1>Millard West HSCTF 2015</h1>";
 // Sign in button
 		$pathToRoot = '';
 		if ($pageName != 'index' && $pageName != 'scoreboard' && $pageName != 'admin' && $pageName != 'userinfo' && $pageName != 'questionStats') {
