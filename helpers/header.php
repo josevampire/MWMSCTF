@@ -15,6 +15,14 @@
 			    });
 			</script>';
 		}
+		if ($_SESSION['betaFail']) {
+			echo '
+			<script type="text/javascript">
+			    $(window).load(function(){
+			        $("#modalBeta").modal("show");
+			    });
+			</script>';
+		}
 		if ($_SESSION["signedIn"]) {
 			echo '<a href="' . $pathToRoot . 'helpers/logout.php"><button type="button" class="btn btn-default">Sign Out</button></a>
 			<button type="button" class="btn btn-default" disabled="disabled">Signed in as ' . $_SESSION["username"] . '</button>';

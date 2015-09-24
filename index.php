@@ -35,7 +35,7 @@
 			<div class="panel panel-body" id = "body">
 				<div class="panel-body">
 					<?php
-						indexBody();
+						indexBody(pageName);
 					?>
 				</div>
 			</div>
