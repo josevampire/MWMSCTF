@@ -93,8 +93,6 @@
 				    <h3 class="panel-title">Info</h3>
 				</div>
 				<div class="panel-body">
-						<b><p class="alert alert-danger">While <a href="https://www.raspberrypi.org/forums/viewtopic.php?f=66&t=119796" target="_blank">this</a> is not against the rules, come on, really? (Aaron we know it was you)</p></b>
-
 				    <p>Thank you for being a beta tester for this site. Click around, explore, find the flags. If you have any feedback, questions, or comments, please send them to info@mwmsctf.com.</p>
 
 				    <p>Good luck!!</p>
