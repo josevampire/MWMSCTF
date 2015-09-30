@@ -28,7 +28,7 @@
    printTable('crypto', $users, $stats['crypto100'], $stats['crypto200'], $stats['crypto300'], $stats['crypto400'], $stats['crypto500']);
    printTable('grabBag', $users, $stats['grabBag100'], $stats['grabBag200'], $stats['grabBag300'], $stats['grabBag400'], $stats['grabBag500']);
    printTable('recon', $users, $stats['recon100'], $stats['recon200'], $stats['recon300'], $stats['recon400'], $stats['recon500']);
-   printTable('trivia', $users, $stats['trivia100'], $stats['trivia200'], $stats['trivia300'], $stats['trivia400'], $stats['trivia500']);
+   printTable('exploit', $users, $stats['exploit100'], $stats['exploit200'], $stats['exploit300'], $stats['exploit400'], $stats['exploit500']);
    printTable('web', $users, $stats['web100'], $stats['web200'], $stats['web300'], $stats['web400'], $stats['web500']);
    printTable('flash', $users, $stats['flash100'], $stats['flash200'], $stats['flash300'], $stats['flash400'], $stats['flash500']);
  }
@@ -42,8 +42,8 @@
      $titleName = 'Grab Bag';
    } else if ($name == 'recon') {
      $titleName = 'Reconnaissance';
-   } else if ($name == 'trivia') {
-     $titleName = 'Trivia';
+   } else if ($name == 'exploit') {
+     $titleName = 'Exploit';
    } else if ($name == 'web') {
      $titleName = 'Web';
    } else if($name == 'flash'){

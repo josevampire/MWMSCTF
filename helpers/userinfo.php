@@ -38,8 +38,8 @@
      $titleName = 'Grab Bag';
    } else if ($name == 'recon') {
      $titleName = 'Reconnaissance';
-   } else if ($name == 'trivia') {
-     $titleName = 'Trivia';
+   } else if ($name == 'exploit') {
+     $titleName = 'Exploit';
    } else if ($name == 'web') {
      $titleName = 'Web';
    } else if($name == 'flash'){

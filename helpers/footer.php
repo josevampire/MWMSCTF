@@ -4,13 +4,13 @@
 		if ($pageName != 'index' && $pageName != 'scoreboard' && $pageName != 'admin') {
 			$pathToRoot = '../';
 		}
-		echo '<p>&copy; 2015 Nicko, Inc. 
+		echo '<p>&copy; 2015 Nicko, Inc.
 			&nbsp;&nbsp;&nbsp;
 			<a href = "' . $pathToRoot . 'index.php">Home</a>
 			&nbsp;&nbsp;&nbsp;
 			<a href = "' . $pathToRoot . 'problems/crypto.php">Crypto</a>
 			&nbsp;&nbsp;&nbsp;
-			<a href = "' . $pathToRoot . 'problems/trivia.php">Trivia</a>
+			<a href = "' . $pathToRoot . 'problems/exploit.php">Exploit</a>
 			&nbsp;&nbsp;&nbsp;
 			<a href = "' . $pathToRoot . 'problems/web.php">Web</a>
 			&nbsp;&nbsp;&nbsp;

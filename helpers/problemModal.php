@@ -66,8 +66,8 @@
 			$titleName = 'Grab Bag';
 		} else if ($pageName == 'recon') {
 			$titleName = 'Reconnaissance';
-		} else if ($pageName == 'trivia') {
-			$titleName = 'Trivia';
+		} else if ($pageName == 'exploit') {
+			$titleName = 'exploit';
 		} else if ($pageName == 'web') {
 			$titleName = 'Web';
 		} else if($pageName == 'flash'){

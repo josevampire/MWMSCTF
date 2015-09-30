@@ -41,10 +41,10 @@
 	    } else {
 	    	echo '<li class=" ' . $disabledText . '"><a'; if ($href) {echo ' href="' . $pathToRoot . 'problems/crypto.php"';} echo '>Crypto</a></li>';
 	    }
-	    if ($pageName == 'trivia') {
-	        echo '<li class="active ' . $disabledText . '"><a>Trivia<span class="sr-only">(current)</span></a></li>';
+	    if ($pageName == 'exploit') {
+	        echo '<li class="active ' . $disabledText . '"><a>Exploit<span class="sr-only">(current)</span></a></li>';
 	    } else {
-	    	echo '<li class=" ' . $disabledText . '"><a'; if ($href) {echo ' href="' . $pathToRoot . 'problems/trivia.php"';} echo '>Trivia</a></li>';
+	    	echo '<li class=" ' . $disabledText . '"><a'; if ($href) {echo ' href="' . $pathToRoot . 'problems/exploit.php"';} echo '>Exploit</a></li>';
 	    }
 	    if ($pageName == 'web') {
 	        echo '<li class="active ' . $disabledText . '"><a>Web<span class="sr-only">(current)</span></a></li>';
