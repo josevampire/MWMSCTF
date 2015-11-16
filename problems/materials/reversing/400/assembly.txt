@@ -1,0 +1,21 @@
+section .text
+	global	_start
+
+_start:
+	mov	eax, 0x1B 
+	mov	rax, 0xC
+	mov	ebx, 0xE
+	inc	ebx
+	add	rax, ebx
+	cmp	eax, rax
+	je	L2
+	jmp	L1
+	l1:
+	sub	eax, ebx
+	imul	eax, 0xD
+	add	rax, eax
+	l2:
+	imul	rax, eax
+	sub	rax, 0x2CA
+	imul	rax, 0x1A994E4F5
+	ret	rax
