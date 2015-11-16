@@ -5,5 +5,3 @@ public String count(String x, int y){
 		return count("a" + x + "p", y++);
 	}
 }
-
-This method was passed the following, (key, 0).
