@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Arrays(){
+public class reverseMe(){
 
 	public static void main(String[] args){
 
