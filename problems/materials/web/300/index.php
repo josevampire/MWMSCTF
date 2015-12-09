@@ -11,6 +11,7 @@
 	} else {
 		setcookie("admin", "0");
 	}
+	include '../webFlags.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,7 +23,7 @@
     <h1 style="margin:10px">Super Secret Stuff Login Page</h1>
 		<?php
 			if ($auth == 'true') {
-				echo '<h4 class="text-success" style="margin: 0px 0px 0px 10px">Welcome administrator!</h4><br><h5 class="text-success" style="margin: 0px 0px 10px 10px">flag("cIsForCoookyAndCoookyIsForMe")</h5>';
+				echo '<h4 class="text-success" style="margin: 0px 0px 0px 10px">Welcome administrator!</h4><br><h5 class="text-success" style="margin: 0px 0px 10px 10px">' . $web300 . '</h5>';
 			} else if ($auth == 'false') {
 				echo '<h4 class="text-danger" style="margin: 0px 0px 0px 10px">No admin rights. Please login.</h4>';
 			} else {

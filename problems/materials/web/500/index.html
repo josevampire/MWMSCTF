@@ -7,7 +7,11 @@
 	<body>
     <h1 style="margin:10px">Super Secret Stuff Login Page</h1>
     <form style="width:150px" action='login.php' method='post'>
-      <input type="text" class="form-control" name="username" placeholder="Username" style="margin:10px">
+			<!-- USED TO PREVENT AUTOFILL -->
+			<input style="display:none" type="text" name="fakeusernameremembered"/>
+			<input style="display:none" type="password" name="fakepasswordremembered"/>
+			<!-- ACTUAL INPUTS -->
+			<input type="text" class="form-control" name="username" placeholder="Username" style="margin:10px">
       <input type="password" class="form-control" name="password" placeholder="Password" style="margin:10px">
 			<input type='hidden' name='debug' value='0'>
       <button type="submit" class="btn" style="margin-left:10px">Sign In</button>

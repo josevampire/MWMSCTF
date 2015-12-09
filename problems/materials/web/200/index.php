@@ -2,6 +2,7 @@
 	if (!isset($_GET['admin'])) {
 		header("Location: index.php?admin=FALSE");
 	}
+	include '../webFlags.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,7 +16,7 @@
 			if ($_GET['admin'] == 'FALSE') {
         echo '<h4 class="text-danger" style="margin:10px">No admin rights. Please login.</h4>';
       } else if ($_GET['admin'] == 'TRUE') {
-        echo '<h4 class="text-success" style="margin: 0px 0px 0px 10px">Welcome administrator!</h4><br><h5 class="text-success" style="margin: 0px 0px 10px 10px">flag("broDoYouEvenGetVar")</h5>';
+        echo '<h4 class="text-success" style="margin: 0px 0px 0px 10px">Welcome administrator!</h4><br><h5 class="text-success" style="margin: 0px 0px 10px 10px">' . $web200 . '</h5>';
       } else {
         echo '<h4 class="text-warning" style="margin:10px">Unknow permission. Admin var does not match specs.</h4>';
       }

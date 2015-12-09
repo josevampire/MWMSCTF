@@ -1,99 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>2048</title>
-
-  <link href="style/main.css" rel="stylesheet" type="text/css">
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
-  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
-  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone, retina -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
-</head>
-<body>
-  <div class="container">
-    <div class="heading">
-      <h1 class="title">2048</h1>
-      <div class="scores-container">
-        <div class="score-container">0</div>
-        <div class="best-container">0</div>
-      </div>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Finestein's Problem</title>
+  </head>
+  <body>
+    <div style = "text-align: center; width:750px; margin: 0px auto">
+      <h1> This is Abert Finestein's notorious problem, with a twist! </h1>
+      <img src = "finestein.jpg" alt = "Finestein" style = "border: 2px solid black; height : 300px; width: 300px">
+      <h3 style = "color: red; text-decoration: underline"><b> These are the basic facts: </b></h3>
+      <ul style = "text-align: left">
+        <li>There are 5 Programmers (along the street) with 5 different colored houses:
+      blue, green, red, white and yellow.</li>
+        <li>Each programmer uses a different browser : Safari, Internet Explorer, Chrome, Opera, and Firefox</li>
+        <li>These 5 programmers use different operating systems: Windows 8, OS X, Ubuntu, Debian and Windows 7,<br>
+            Drink a certain energy drink: Redbull, Monstor, NOS, Amp and Rockstar,<br>
+            And have a certain brand of computer: Dell, Apple, HP, Asus and Lenovo.</li>
+        <li>No owners have the same brand, drink the same energy drink, or use the same operating system.</li>
+      </ul>
+      <h3 style = "color: red; text-decoration: underline"><b> Here are some hints: </b></h3>
+      <ul  style = "text-align: left">
+        <li>The Safari user lives in a red house.</li>
+        <li>The Firefox user has an HP.</li>
+        <li>The IE user runs on Debian.</li>
+        <li>The green house is on the left of the white house (next to it).</li>
+        <li>The green house owner runs OS X.</li>
+        <li>The person who drinks NOS uses an Apple.</li>
+        <li>The owner of the yellow house drinks Monstor.</li>
+        <li>The programmer living in the house right in the center runs Ubuntu.</li>
+        <li>The Opera user lives in the first house.</li>
+        <li>The man who drinks Rockstar lives next to the one who owns a Dell.</li>
+        <li>The man who owns a Lenovo lives next to the man who drinks Monstor</li>
+        <li>The owner who drinks Redbull runs Windows 8.</li>
+        <li>The Chrome user drinks Amp.</li>
+        <li>The Opera user lives next to the blue house.</li>
+        <li>The programmer who drinks Rockstar has a neighbor who runs Windows 7.</li>
+      </ul>
+      <h3> Which browser does the Asus user haves? </h3>
     </div>
 
-    <div class="above-game">
-      <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
-      <a class="restart-button">New Game</a>
-    </div>
-
-    <div class="game-container">
-      <div class="game-message">
-        <p></p>
-        <div class="lower">
-	        <a class="keep-playing-button">Keep going</a>
-          <a class="retry-button">Try again</a>
-        </div>
-      </div>
-
-      <div class="grid-container">
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-      </div>
-
-      <div class="tile-container">
-
-      </div>
-    </div>
-
-    <p class="game-explanation">
-      <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
-    </p>
-    <hr>
-    <p>
-    <strong class="important">Note:</strong> This site is the official version of 2048. You can play it on your phone via <a href="http://git.io/2048">http://git.io/2048.</a> All other apps or sites are derivatives or fakes, and should be used with caution.
-    </p>
-    <hr>
-    <p>
-    Created by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
-    </p>
-  </div>
-
-  <script src="js/bind_polyfill.js"></script>
-  <script src="js/classlist_polyfill.js"></script>
-  <script src="js/animframe_polyfill.js"></script>
-  <script src="js/keyboard_input_manager.js"></script>
-  <script src="js/html_actuator.js"></script>
-  <script src="js/grid.js"></script>
-  <script src="js/tile.js"></script>
-  <script src="js/local_storage_manager.js"></script>
-  <script src="js/game_manager.js"></script>
-  <script src="js/application.js"></script>
-</body>
+  </body>
 </html>
