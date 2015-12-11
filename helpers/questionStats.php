@@ -30,6 +30,7 @@
    printTable('recon', $users, $stats['recon100'], $stats['recon200'], $stats['recon300'], $stats['recon400'], $stats['recon500']);
    printTable('trivia', $users, $stats['trivia100'], $stats['trivia200'], $stats['trivia300'], $stats['trivia400'], $stats['trivia500']);
    printTable('web', $users, $stats['web100'], $stats['web200'], $stats['web300'], $stats['web400'], $stats['web500']);
+   printTable('reversing', $users, $stats['reversing100'], $stats['reversing200'], $stats['reversing300'], $stats['reversing400'], $stats['reversing500']);
    printTable('flash', $users, $stats['flash100'], $stats['flash200'], $stats['flash300'], $stats['flash400'], $stats['flash500']);
  }
 
@@ -48,6 +49,8 @@
      $titleName = 'Web';
    } else if($name == 'flash'){
      $titleName = 'Flash';
+   } else if ($name == 'reversing') {
+     $titleName = 'Reversing';
    }
    if ($_SESSION['admin']) {
      $admin = true;

@@ -44,6 +44,8 @@
      $titleName = 'Web';
    } else if($name == 'flash'){
      $titleName = 'Flash';
+   } else if ($name == 'reversing') {
+     $titleName = 'Reversing';
    }
 
    if ($one == "TRUE") {
