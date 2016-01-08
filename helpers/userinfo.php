@@ -48,37 +48,57 @@
      $titleName = 'Reversing';
    }
 
-   if ($one == "TRUE") {
-     $one ="Complete";
+   if ($one != "FALSE") {
+     if (is_numeric($one)) {
+       $one = date('M d G:i', $one);
+     } else {
+       $one = "Complete";
+     }
      $oneTag = 'class="success"';
    } else {
      $oneTag = 'class="danger"';
      $one = "Incomplete";
    }
-   if ($two == "TRUE") {
+   if ($two != "FALSE") {
      $twoTag = 'class="success"';
-     $two = "Complete";
+     if (is_numeric($two)) {
+       $two = date('M d G:i', $two);
+     } else {
+       $two = "Complete";
+     }
    } else {
      $twoTag = 'class="danger"';
      $two = "Incomplete";
    }
-   if ($three == "TRUE") {
+   if ($three != "FALSE") {
      $threeTag = 'class="success"';
-     $three = "Complete";
+     if (is_numeric($three)) {
+       $three = date('M d G:i', $three);
+     } else {
+       $three = "Complete";
+     }
    } else {
      $threeTag = 'class="danger"';
      $three = "Incomplete";
    }
-   if ($four == "TRUE") {
+   if ($four != "FALSE") {
      $fourTag = 'class="success"';
-     $four = "Complete";
+     if (is_numeric($four)) {
+       $four = date('M d G:i', $four);
+     } else {
+       $four = "Complete";
+     }
    } else {
      $fourTag = 'class="danger"';
      $four = "Incomplete";
    }
-   if ($five == "TRUE") {
+   if ($five != "FALSE") {
      $fiveTag = 'class="success"';
-     $five = "Complete";
+     if (is_numeric($five)) {
+       $five = date('M d G:i', $five);
+     } else {
+       $five = "Complete";
+     }
    } else {
      $fiveTag = 'class="danger"';
      $five = "Incomplete";

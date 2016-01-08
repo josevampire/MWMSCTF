@@ -17,7 +17,7 @@
            if (!isset($stats[$key])) {
              $stats[$key] = 0;
            }
-           if ($value == 'TRUE') {
+           if ($value != 'FALSE') {
              $stats[$key] ++;
            }
          }

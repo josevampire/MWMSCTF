@@ -52,7 +52,7 @@
 		$columnName = '$pageName $pointValue';
 		$completedText = '';
 
-		if ($row["$pageName$pointValue"] == 'TRUE') {
+		if ($row["$pageName$pointValue"] != 'FALSE') {
 			$completedText = ' has-success';
 			$disabledForm = 'id="disabledInput" placeholder="You have already completed this question." disabled';
 		}

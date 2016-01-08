@@ -6,7 +6,7 @@
       $score = 0;
       foreach ($row as $key => $value) {
         if (gettype($key) == "string" && is_numeric(substr($key, -3))) {
-          if ($value == "TRUE") {
+          if ($value != "FALSE") {
             $score += intval(substr($key, -3));
           }
         }
