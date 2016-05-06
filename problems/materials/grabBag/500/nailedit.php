@@ -9,9 +9,9 @@
     echo "Time diff within tolerance. Awarding points. Redirecting in 3 seconds.";
     include '../../../../helpers/mysqlLogin.php';
     session_start();
-    $_SESSION["answerState"] = 20 + 4;
+    $_SESSION["answerState"] = 20 + 5;
     $user = $_SESSION['username'];
-    $sql = "UPDATE scores SET grabBag400='TRUE' WHERE user='$user'";
+    $sql = "UPDATE scores SET grabBag500='TRUE' WHERE user='$user'";
     mysqli_query($conn, $sql);
     echo '<script>setTimeout(function(){
               var curTime = new Date().getTime() / 1000;
