@@ -93,7 +93,7 @@
 				    <h3 class="panel-title">Info</h3>
 				</div>
 				<div class="panel-body">
-				    <p>Thank you for being a beta tester for this site. Click around, explore, find the flags. If you have any feedback, questions, or comments, please send them to info@mwmsctf.com.</p>
+				    <p>Click around, explore, find the flags. If you have any feedback, questions, or comments, please send them to info@mwmsctf.com.</p>
 
 				    <p>Good luck!!</p>
 				</div>
@@ -108,6 +108,19 @@
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. Brute forcing will result in a 5 minute lock out.
 						<br>
 						2. Please do not share flags. The game is more fun when everyone does their own work.
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+				    <h3 class="panel-title">Sponsers</h3>
+				</div>
+				<div class="panel-body">
+						<p>Thank you to our sponsers for donating prizes for and promoting this competition.</p>
+						<center>
+						<img src="images/sponsers/1.png" style="width: 800px">
+						<img src="images/sponsers/2.png">
+						<img src="images/sponsers/3.png">
+						</center>
 				</div>
 			</div>
 			';
