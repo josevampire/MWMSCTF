@@ -4,7 +4,7 @@
 		if ($pageName != 'index' && $pageName != 'scoreboard' && $pageName != 'admin') {
 			$pathToRoot = '../';
 		}
-		echo '<p>&copy; 2015 Nicko, Inc.
+		echo '<p>&copy; 2016 Nicko, Inc.
 			&nbsp;&nbsp;&nbsp;
 			<a href = "' . $pathToRoot . 'index.php">Home</a>
 			&nbsp;&nbsp;&nbsp;
