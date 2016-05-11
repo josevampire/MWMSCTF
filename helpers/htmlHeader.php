@@ -1,7 +1,7 @@
 <?php
 	function htmlHeader($pageName) {
 		$pathToRoot = '';
-		if ($pageName != 'index' && $pageName != 'scoreboard' && $pageName != 'admin') {
+		if ($pageName != 'index' && $pageName != 'scoreboard' && $pageName != 'admin' && $pageName != 'questionStats' && $pageName != 'userinfo') {
 			$pathToRoot = '../';
 		}
 		echo '

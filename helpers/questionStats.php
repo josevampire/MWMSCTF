@@ -149,7 +149,7 @@
        if ($row['showOnBoard'] == 'FALSE') {
          continue;
        }
-       if ($row[$probCode] == "TRUE") {
+       if ($row[$probCode] != "FALSE") {
          $display = 'Complete';
          $style = 'class="success"';
        } else {
