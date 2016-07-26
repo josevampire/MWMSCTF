@@ -1,0 +1,5 @@
+In the circuit attached, the capacitance of each component is as listed below and the circuit holds a charge of 1.305E-6 C.
+What is the voltage of the battery? Please answer with 5 sig figs.
+C1 = 20E-9 F
+C2 = 10E-9 F
+C3 = 30E-9 F

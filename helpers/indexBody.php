@@ -8,6 +8,22 @@
 
 		if (!$_SESSION['gameInProgress'] && !$_SESSION['admin'] && !$_SESSION['beta']) {
 			echo '<center><h3>Welcome to the first annual MSCTF!!</h3></center>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+						<h3 class="panel-title">Announcements</h3>
+				</div>
+				<div class="panel-body">
+				    <p>And its over!! Congrats to Monarchs1 for the first place win!
+						<br>For second place, as I\'m sure you all know we have a tie. The tie is broken by who ever got to that point value first.
+						If you click on each user\'s name in the scoreboard you can see what questions they have solved and when the question was solved.
+						<br><br>Using this tool we see second place goes to Codierung jun as the last question they solved was May 13 at 13:10.
+						This means third goes to CM2 as they last question solved for them was also May 13 but at 13:52.
+						<br>
+						<br>
+						Once again thank you all for participating and we hope you had fun!
+						</p>
+				</div>
+			</div>
 			<div class="panel panel-default">
 				<div class="panel-body">
 				    <p>The game is currently closed. To view questions please wait until the game opens or login with an administrator account.</p>
@@ -88,6 +104,19 @@
 
 		} else {
 		echo '<center><h3>Welcome to the first annual MSCTF!!</h3></center>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+						<h3 class="panel-title">Announcements</h3>
+				</div>
+				<div class="panel-body">
+				    <p>And its over!! Congrats to Monarchs1 for the first place win! For second place, as I\'m sure you all know we have a tie. The tie is broken by who ever got to that point value first.
+						If you click on each users name in the scoreboard you can see what questions they have solved and when the question was solved. Using this tool we see second place goes to Codierung jun as the last question they solved was May 13 at 13:10.
+						This means third goes to CM2 as they last question solved for them was also May 13 but at 13:52.
+						<br>
+						Once again thank you all for participating and we hope you had fun!
+						</p>
+				</div>
+			</div>
 			<div class="panel panel-default">
 				<div class="panel-heading">
 				    <h3 class="panel-title">Info</h3>

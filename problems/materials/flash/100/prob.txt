@@ -1,0 +1,2 @@
+An car, starting at rest, accelerates down the interstate at 3.20 m/s2 for 6.937 s.
+Determine the distance traveled. Please answer with 5 sig. figs.
